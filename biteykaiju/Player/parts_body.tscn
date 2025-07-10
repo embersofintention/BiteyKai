@@ -1,0 +1,152 @@
+[gd_scene load_steps=16 format=3 uid="uid://dao5ogkc7gvb2"]
+
+[ext_resource type="Texture2D" uid="uid://b5jh55d2jb4xx" path="res://ModularBitey Pieces/Modular Bitey ref.png" id="1_8yugs"]
+[ext_resource type="Texture2D" uid="uid://m5plalcvdlk2" path="res://ModularBitey Pieces/Body.png" id="2_d511c"]
+[ext_resource type="Texture2D" uid="uid://7ua85lrma0rl" path="res://ModularBitey Pieces/Arm.png" id="6_6moo4"]
+[ext_resource type="Texture2D" uid="uid://c431erdcyhxba" path="res://ModularBitey Pieces/Leg.png" id="7_rv1b0"]
+[ext_resource type="Texture2D" uid="uid://767uvvwmnamt" path="res://ModularBitey Pieces/Tail.png" id="8_bdr7h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxkkm"]
+atlas = ExtResource("1_8yugs")
+region = Rect2(0, 0, 250, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wlv5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxkkm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcf4v"]
+atlas = ExtResource("2_d511c")
+region = Rect2(0, 0, 139, 165)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ko27v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcf4v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x5ym"]
+atlas = ExtResource("6_6moo4")
+region = Rect2(0, 0, 70, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ned2v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x5ym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvm8x"]
+atlas = ExtResource("7_rv1b0")
+region = Rect2(0, 0, 80, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llxbf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvm8x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lxl1"]
+atlas = ExtResource("8_bdr7h")
+region = Rect2(0, 0, 91, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8nkf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lxl1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PartsBody" type="Node2D"]
+
+[node name="REF" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -20
+sprite_frames = SubResource("SpriteFrames_wlv5e")
+
+[node name="ALL" type="Node2D" parent="."]
+
+[node name="TEST" type="Marker2D" parent="ALL"]
+visible = false
+
+[node name="Body" type="Node2D" parent="ALL"]
+position = Vector2(-1, 89)
+
+[node name="Torso" type="Marker2D" parent="ALL/Body"]
+position = Vector2(-10, -16)
+
+[node name="Torso_Spr" type="AnimatedSprite2D" parent="ALL/Body/Torso"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -54)
+sprite_frames = SubResource("SpriteFrames_ko27v")
+
+[node name="Limbs" type="Node2D" parent="ALL/Body"]
+position = Vector2(29, -7)
+
+[node name="ArmF" type="Marker2D" parent="ALL/Body/Limbs"]
+position = Vector2(-36, -66)
+
+[node name="Arm_Spr" type="AnimatedSprite2D" parent="ALL/Body/Limbs/ArmF"]
+modulate = Color(0.241156, 0.241156, 0.241156, 1)
+position = Vector2(13, 23)
+sprite_frames = SubResource("SpriteFrames_ned2v")
+
+[node name="ArmB2" type="Marker2D" parent="ALL/Body/Limbs"]
+z_index = -2
+position = Vector2(27, -67)
+
+[node name="Arm_Spr" type="AnimatedSprite2D" parent="ALL/Body/Limbs/ArmB2"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, 24)
+sprite_frames = SubResource("SpriteFrames_ned2v")
+
+[node name="LegF" type="Marker2D" parent="ALL/Body/Limbs"]
+position = Vector2(-55, -27)
+
+[node name="Leg_Spr" type="AnimatedSprite2D" parent="ALL/Body/Limbs/LegF"]
+modulate = Color(0.158472, 0.158472, 0.158472, 1)
+position = Vector2(13, 24)
+skew = -0.0610865
+sprite_frames = SubResource("SpriteFrames_llxbf")
+
+[node name="LegB" type="Marker2D" parent="ALL/Body/Limbs"]
+z_index = -1
+position = Vector2(10, -24)
+
+[node name="Leg_Spr" type="AnimatedSprite2D" parent="ALL/Body/Limbs/LegB"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, 22)
+sprite_frames = SubResource("SpriteFrames_llxbf")
+
+[node name="Tail" type="Marker2D" parent="ALL/Body"]
+z_index = -1
+position = Vector2(-43, -33)
+
+[node name="Tail_Spr" type="AnimatedSprite2D" parent="ALL/Body/Tail"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-26, 0)
+sprite_frames = SubResource("SpriteFrames_l8nkf")
