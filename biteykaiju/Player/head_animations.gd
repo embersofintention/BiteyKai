@@ -10,9 +10,7 @@ var current_animation := "" # for animation helper function
 
 # -----------------------------------
 
-func _ready() -> void:
-	# setting up a signal for when an animation finishes
-	head_animations.connect("animation_finished", Callable(self, "on_animation_finished"))
+
 	
 
 # HELPER FUNCTION:  swap animation only if it's changed

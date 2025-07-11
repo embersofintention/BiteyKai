@@ -1949,6 +1949,7 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_gxfwc")
 
 [node name="HeadAnimations" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_mdpxf"),
 &"HEAD": SubResource("AnimationLibrary_6moo4")
