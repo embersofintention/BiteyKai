@@ -1,29 +1,259 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfdikk2aixe5i"]
+[gd_scene load_steps=30 format=3 uid="uid://bfdikk2aixe5i"]
 
 [ext_resource type="Script" uid="uid://dlkanoxuiabim" path="res://Player/player_script.gd" id="1_gwnis"]
 [ext_resource type="Texture2D" uid="uid://b5jh55d2jb4xx" path="res://ModularBitey Pieces/Modular Bitey ref.png" id="1_l8h54"]
-[ext_resource type="PackedScene" uid="uid://dao5ogkc7gvb2" path="res://Player/parts_body.tscn" id="2_btcbx"]
-[ext_resource type="PackedScene" uid="uid://bejm4cqfbqjb2" path="res://Player/parts_head.tscn" id="3_btcbx"]
+[ext_resource type="Texture2D" uid="uid://m5plalcvdlk2" path="res://ModularBitey Pieces/Body.png" id="3_fhl08"]
+[ext_resource type="Texture2D" uid="uid://7ua85lrma0rl" path="res://ModularBitey Pieces/Arm.png" id="4_vtle1"]
+[ext_resource type="Texture2D" uid="uid://c431erdcyhxba" path="res://ModularBitey Pieces/Leg.png" id="5_od3ui"]
+[ext_resource type="Texture2D" uid="uid://767uvvwmnamt" path="res://ModularBitey Pieces/Tail.png" id="6_00tjw"]
+[ext_resource type="Texture2D" uid="uid://dux825vb861pa" path="res://ModularBitey Pieces/Tongue2.png" id="7_apopc"]
+[ext_resource type="Texture2D" uid="uid://cl5uyeh53khf4" path="res://ModularBitey Pieces/Tongue.png" id="8_5htga"]
+[ext_resource type="Texture2D" uid="uid://dfov27qe7f0m3" path="res://ModularBitey Pieces/Jaw.png" id="9_p5o4e"]
+[ext_resource type="Texture2D" uid="uid://b3q3ga5qiyh84" path="res://ModularBitey Pieces/Skull.png" id="10_gu6f8"]
+[ext_resource type="Texture2D" uid="uid://bfudq80ie8x18" path="res://ModularBitey Pieces/Eye.png" id="11_dkpta"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ntmi"]
 radius = 65.0077
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcf4v"]
+atlas = ExtResource("3_fhl08")
+region = Rect2(0, 0, 139, 165)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfmf2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcf4v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x5ym"]
+atlas = ExtResource("4_vtle1")
+region = Rect2(0, 0, 70, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pisgm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x5ym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvm8x"]
+atlas = ExtResource("5_od3ui")
+region = Rect2(0, 0, 80, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b1ygp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvm8x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lxl1"]
+atlas = ExtResource("6_00tjw")
+region = Rect2(0, 0, 91, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o28un"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lxl1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdpxf"]
+atlas = ExtResource("7_apopc")
+region = Rect2(0, 0, 143, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euxme"]
+atlas = ExtResource("8_5htga")
+region = Rect2(0, 0, 113, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n471f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdpxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euxme")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilprw"]
+atlas = ExtResource("9_p5o4e")
+region = Rect2(0, 0, 126, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7emwf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilprw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srp4j"]
+atlas = ExtResource("10_gu6f8")
+region = Rect2(0, 0, 132, 77)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hshwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srp4j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckpb3"]
+atlas = ExtResource("11_dkpta")
+region = Rect2(0, 0, 41, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpjlu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckpb3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gwnis")
 
 [node name="ModularBiteyRef" type="Sprite2D" parent="."]
-visible = false
 z_index = -10
+position = Vector2(17, -108)
 texture = ExtResource("1_l8h54")
-
-[node name="parts_body" parent="." instance=ExtResource("2_btcbx")]
-unique_name_in_owner = true
-
-[node name="parts_head" parent="parts_body" instance=ExtResource("3_btcbx")]
-unique_name_in_owner = true
-position = Vector2(-8, -56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(6, 41)
 shape = SubResource("CircleShape2D_4ntmi")
+
+[node name="PartsSkeletonContainer" type="Node2D" parent="."]
+
+[node name="Parts" type="Node2D" parent="PartsSkeletonContainer"]
+
+[node name="Body" type="Node2D" parent="PartsSkeletonContainer/Parts"]
+position = Vector2(13, -18)
+
+[node name="Torso" type="Marker2D" parent="PartsSkeletonContainer/Parts/Body"]
+position = Vector2(-10, -16)
+
+[node name="Torso_Spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Body/Torso"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -54)
+sprite_frames = SubResource("SpriteFrames_lfmf2")
+
+[node name="Limbs" type="Node2D" parent="PartsSkeletonContainer/Parts/Body"]
+position = Vector2(29, -7)
+
+[node name="ArmF" type="Marker2D" parent="PartsSkeletonContainer/Parts/Body/Limbs"]
+position = Vector2(-36, -66)
+
+[node name="Arm_Spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Body/Limbs/ArmF"]
+modulate = Color(0.241156, 0.241156, 0.241156, 1)
+position = Vector2(13, 23)
+sprite_frames = SubResource("SpriteFrames_pisgm")
+
+[node name="ArmB2" type="Marker2D" parent="PartsSkeletonContainer/Parts/Body/Limbs"]
+z_index = -2
+position = Vector2(27, -67)
+
+[node name="Arm_Spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Body/Limbs/ArmB2"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, 24)
+sprite_frames = SubResource("SpriteFrames_pisgm")
+
+[node name="LegF" type="Marker2D" parent="PartsSkeletonContainer/Parts/Body/Limbs"]
+position = Vector2(-55, -27)
+
+[node name="Leg_Spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Body/Limbs/LegF"]
+modulate = Color(0.158472, 0.158472, 0.158472, 1)
+position = Vector2(13, 24)
+skew = -0.0610865
+sprite_frames = SubResource("SpriteFrames_b1ygp")
+
+[node name="LegB" type="Marker2D" parent="PartsSkeletonContainer/Parts/Body/Limbs"]
+z_index = -1
+position = Vector2(10, -24)
+
+[node name="Leg_Spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Body/Limbs/LegB"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, 22)
+sprite_frames = SubResource("SpriteFrames_b1ygp")
+
+[node name="Tail" type="Marker2D" parent="PartsSkeletonContainer/Parts/Body"]
+z_index = -1
+position = Vector2(-43, -33)
+
+[node name="Tail_Spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Body/Tail"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-26, 0)
+sprite_frames = SubResource("SpriteFrames_o28un")
+
+[node name="Head" type="Node2D" parent="PartsSkeletonContainer/Parts"]
+position = Vector2(9, -158)
+rotation = -0.0959931
+
+[node name="Jaw" type="Node2D" parent="PartsSkeletonContainer/Parts/Head"]
+position = Vector2(7, 36)
+
+[node name="Tongue" type="Marker2D" parent="PartsSkeletonContainer/Parts/Head/Jaw"]
+position = Vector2(24, -21)
+scale = Vector2(0.64, 0.885)
+
+[node name="tongue_spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Head/Jaw/Tongue"]
+position = Vector2(26, 15)
+sprite_frames = SubResource("SpriteFrames_n471f")
+
+[node name="jawbone" type="Marker2D" parent="PartsSkeletonContainer/Parts/Head/Jaw"]
+position = Vector2(28, -13)
+
+[node name="Jaw_Spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Head/Jaw/jawbone"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(19, 8)
+sprite_frames = SubResource("SpriteFrames_7emwf")
+
+[node name="Skull" type="Node2D" parent="PartsSkeletonContainer/Parts/Head"]
+position = Vector2(6, 36)
+
+[node name="Skullbone" type="Marker2D" parent="PartsSkeletonContainer/Parts/Head/Skull"]
+position = Vector2(-6, -34)
+
+[node name="Skull_Spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Head/Skull/Skullbone"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(55, 0)
+sprite_frames = SubResource("SpriteFrames_hshwv")
+
+[node name="Eye" type="Marker2D" parent="PartsSkeletonContainer/Parts/Head/Skull"]
+position = Vector2(56, -34)
+
+[node name="Eye_Spr" type="AnimatedSprite2D" parent="PartsSkeletonContainer/Parts/Head/Skull/Eye"]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_gpjlu")
