@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfdikk2aixe5i"]
+[gd_scene load_steps=5 format=3 uid="uid://bfdikk2aixe5i"]
 
 [ext_resource type="Texture2D" uid="uid://b5jh55d2jb4xx" path="res://ModularBitey Pieces/Modular Bitey ref.png" id="1_l8h54"]
 [ext_resource type="PackedScene" uid="uid://dao5ogkc7gvb2" path="res://Player/parts_body.tscn" id="2_btcbx"]
+[ext_resource type="PackedScene" uid="uid://bejm4cqfbqjb2" path="res://Player/parts_head.tscn" id="3_btcbx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ntmi"]
 radius = 65.0077
@@ -9,11 +10,13 @@ radius = 65.0077
 [node name="Player" type="CharacterBody2D"]
 
 [node name="ModularBiteyRef" type="Sprite2D" parent="."]
-visible = false
 z_index = -10
 texture = ExtResource("1_l8h54")
 
 [node name="PartsBody" parent="." instance=ExtResource("2_btcbx")]
+
+[node name="parts_head" parent="PartsBody" instance=ExtResource("3_btcbx")]
+position = Vector2(-3, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, 41)

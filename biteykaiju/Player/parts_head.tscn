@@ -1534,7 +1534,7 @@ _data = {
 }
 
 [node name="parts_head" type="Node2D"]
-position = Vector2(3, 144)
+position = Vector2(5, 55)
 
 [node name="ALL PIECES" type="Node2D" parent="."]
 
