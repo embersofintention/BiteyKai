@@ -19,7 +19,7 @@ texture = ExtResource("1_l8h54")
 [node name="parts_body" parent="." instance=ExtResource("2_btcbx")]
 unique_name_in_owner = true
 
-[node name="parts_head" parent="." instance=ExtResource("3_btcbx")]
+[node name="parts_head" parent="parts_body" instance=ExtResource("3_btcbx")]
 unique_name_in_owner = true
 position = Vector2(-8, -50)
 

@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 		# and to avoid scale.y breaking:
 		if velocity.y: 
 			body.scale.y = player_scale
+			
 	
 	
 	# Animations
