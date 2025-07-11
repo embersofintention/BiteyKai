@@ -1,10 +1,11 @@
 extends Node2D
+# BODY ANIMATIONS
+
 
 # This script handles changing the animations for its corresponding body part
 
 # Variables:
 var current_animation := "" # for animation helper function
-
 @onready var body_animations = %BodyAnimations # assigns AnimationPlayer to a variable
 
 
@@ -21,7 +22,7 @@ func change_animation(anim_name: String):
 		body_animations.play(anim_name)
 		current_animation = anim_name
 
-
+# ANIMATION SWITCHING
 func play_idle_animation(): 
 	change_animation("BODY/idle")
 	print_debug("body is idle")

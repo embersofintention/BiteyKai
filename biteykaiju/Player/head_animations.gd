@@ -1,4 +1,5 @@
 extends Node2D
+# HEAD ANIMATIONS 
 
 # This script handles changing the animations for its corresponding body part
 

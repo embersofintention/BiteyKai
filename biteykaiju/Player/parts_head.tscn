@@ -1902,6 +1902,7 @@ _data = {
 }
 
 [node name="parts_head" type="Node2D"]
+script = ExtResource("6_k8bx6")
 
 [node name="ALL PIECES" type="Node2D" parent="."]
 position = Vector2(6, 56)
@@ -1952,4 +1953,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_mdpxf"),
 &"HEAD": SubResource("AnimationLibrary_6moo4")
 }
-script = ExtResource("6_k8bx6")
