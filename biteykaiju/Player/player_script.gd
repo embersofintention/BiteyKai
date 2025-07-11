@@ -31,7 +31,17 @@ func _physics_process(delta: float) -> void:
 			
 	
 	
-	# Animations
+	# ANIMATIONS
+	
+	# Body Animations
+	if velocity.length() > 0.0: 
+		body.play_run_animation()
+		
+	if velocity.length() == 0.0: 
+		body.play_idle_animation()
+	
+	
+	# Head Animations
 	
 	
 	

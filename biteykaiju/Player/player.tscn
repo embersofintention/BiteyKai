@@ -21,7 +21,7 @@ unique_name_in_owner = true
 
 [node name="parts_head" parent="parts_body" instance=ExtResource("3_btcbx")]
 unique_name_in_owner = true
-position = Vector2(-8, -50)
+position = Vector2(-8, -56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

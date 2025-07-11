@@ -7,6 +7,7 @@ extends Node2D
 # Variables:
 var current_animation := "" # for animation helper function
 @onready var body_animations = %BodyAnimations # assigns AnimationPlayer to a variable
+@onready var this_node = name # returns name of node
 
 
 # -----------------------------------
@@ -21,15 +22,16 @@ func change_animation(anim_name: String):
 	if current_animation != anim_name: 
 		body_animations.play(anim_name)
 		current_animation = anim_name
+		print_debug(this_node, " is ", current_animation)
 
 # ANIMATION SWITCHING
 func play_idle_animation(): 
 	change_animation("BODY/idle")
-	print_debug("body is idle")
+	
 
 func play_run_animation(): 
 	change_animation("BODY/run")
-	print_debug("body is run")
+	
 
 
 		
