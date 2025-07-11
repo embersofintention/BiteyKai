@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dao5ogkc7gvb2"]
+[gd_scene load_steps=22 format=3 uid="uid://dao5ogkc7gvb2"]
 
 [ext_resource type="Texture2D" uid="uid://b5jh55d2jb4xx" path="res://ModularBitey Pieces/Modular Bitey ref.png" id="1_8yugs"]
+[ext_resource type="Script" uid="uid://q35cutpenxrn" path="res://Player/parts_body.gd" id="1_yj6d6"]
 [ext_resource type="Texture2D" uid="uid://m5plalcvdlk2" path="res://ModularBitey Pieces/Body.png" id="2_d511c"]
 [ext_resource type="Texture2D" uid="uid://7ua85lrma0rl" path="res://ModularBitey Pieces/Arm.png" id="6_6moo4"]
 [ext_resource type="Texture2D" uid="uid://c431erdcyhxba" path="res://ModularBitey Pieces/Leg.png" id="7_rv1b0"]
@@ -1258,6 +1259,7 @@ _data = {
 }
 
 [node name="PartsBody" type="Node2D"]
+script = ExtResource("1_yj6d6")
 
 [node name="REF" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -1325,9 +1327,10 @@ position = Vector2(-26, 0)
 sprite_frames = SubResource("SpriteFrames_l8nkf")
 
 [node name="BodyAnimations" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_euxme"),
-&"KaiBody": SubResource("AnimationLibrary_d511c")
+&"BODY": SubResource("AnimationLibrary_d511c")
 }
 
 [node name="TEST" type="Marker2D" parent="."]

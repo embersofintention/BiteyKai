@@ -1,0 +1,44 @@
+extends Node2D
+
+# This script handles changing the animations for its corresponding body part
+
+# Variables:
+var current_animation := "" # for animation helper function
+
+@onready var body_animations = %BodyAnimations # assigns AnimationPlayer to a variable
+
+
+# -----------------------------------
+
+func _ready() -> void:
+	# setting up a signal for when an animation finishes
+	body_animations.connect("animation_finished", Callable(self, "on_animation_finished"))
+	
+
+# HELPER FUNCTION:  swap animation only if it's changed
+func change_animation(anim_name: String):
+	if current_animation != anim_name: 
+		body_animations.play(anim_name)
+		current_animation = anim_name
+
+
+func play_idle_animation(): 
+	change_animation("BODY/idle")
+	print_debug("body is idle")
+
+func play_run_animation(): 
+	change_animation("BODY/run")
+	print_debug("body is run")
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

@@ -1582,5 +1582,5 @@ sprite_frames = SubResource("SpriteFrames_gxfwc")
 [node name="HeadAnimations" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_mdpxf"),
-&"HeadAnimations": SubResource("AnimationLibrary_6moo4")
+&"HEAD": SubResource("AnimationLibrary_6moo4")
 }
