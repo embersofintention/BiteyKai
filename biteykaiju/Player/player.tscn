@@ -15,9 +15,10 @@ texture = ExtResource("1_l8h54")
 
 [node name="PartsBody" parent="." instance=ExtResource("2_btcbx")]
 
-[node name="parts_head" parent="PartsBody" instance=ExtResource("3_btcbx")]
-position = Vector2(-3, 6)
+[node name="parts_head" parent="." instance=ExtResource("3_btcbx")]
+position = Vector2(-8, -50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(6, 41)
 shape = SubResource("CircleShape2D_4ntmi")

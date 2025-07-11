@@ -86,7 +86,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(6, 56)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -456,7 +456,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(6, 56)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -821,7 +821,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(6, 56)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1175,7 +1175,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(6, 56)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1534,9 +1534,9 @@ _data = {
 }
 
 [node name="parts_head" type="Node2D"]
-position = Vector2(5, 55)
 
 [node name="ALL PIECES" type="Node2D" parent="."]
+position = Vector2(6, 56)
 
 [node name="Head" type="Node2D" parent="ALL PIECES"]
 position = Vector2(-5, -56)
