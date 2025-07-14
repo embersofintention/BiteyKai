@@ -1468,7 +1468,62 @@ sprite_frames = SubResource("SpriteFrames_rv1b0")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="ALL PIECES"]
 
-[node name="Bone2D" type="Bone2D" parent="ALL PIECES/Skeleton2D"]
+[node name="Torso" type="Bone2D" parent="ALL PIECES/Skeleton2D"]
+position = Vector2(0, 82)
+rotation = -1.58941
+
+[node name="Head_Rotate" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
+position = Vector2(137.088, -3.44901)
+rotation = 1.65707
+
+[node name="Skull" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso/Head_Rotate"]
+position = Vector2(31.9268, -2.16354)
+rotation = -0.0280033
+auto_calculate_length_and_angle = false
+length = 34.432
+bone_angle = 0.0
+
+[node name="jaw" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso/Head_Rotate"]
+position = Vector2(28.6797, 9.08173)
+rotation = 0.665396
+auto_calculate_length_and_angle = false
+length = 34.432
+bone_angle = 0.0
+
+[node name="Arm_F" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
+position = Vector2(70.1554, -7.69555)
+rotation = 2.49312
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 0.0
+
+[node name="Arm_B" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
+position = Vector2(66.9645, 56.2561)
+rotation = 2.51482
+auto_calculate_length_and_angle = false
+length = 43.649
+bone_angle = 0.0
+
+[node name="Leg_F" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
+position = Vector2(28.5163, -27.474)
+rotation = 3.12807
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 0.0
+
+[node name="Leg_B" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
+position = Vector2(26.2694, 39.4958)
+rotation = 3.12807
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 0.0
+
+[node name="Tail" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
+position = Vector2(28.8886, -47.4705)
+rotation = -1.51661
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 0.0
 
 [node name="BodyAnimations" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -1481,3 +1536,4 @@ libraries = {
 visible = false
 
 [node name="asdfasdf" type="Node2D" parent="."]
+position = Vector2(0, -110)
