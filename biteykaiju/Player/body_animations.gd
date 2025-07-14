@@ -8,6 +8,7 @@ extends Node2D
 var current_animation := "" # for animation helper function
 @onready var body_animations = %BodyAnimations # assigns AnimationPlayer to a variable
 @onready var this_node = name # returns name of node
+@onready var body = %PartsBody
 
 
 # -----------------------------------

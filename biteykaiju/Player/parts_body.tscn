@@ -1,11 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://dao5ogkc7gvb2"]
+[gd_scene load_steps=37 format=3 uid="uid://dao5ogkc7gvb2"]
 
 [ext_resource type="Texture2D" uid="uid://b5jh55d2jb4xx" path="res://ModularBitey Pieces/Modular Bitey ref.png" id="1_8yugs"]
 [ext_resource type="Script" uid="uid://q35cutpenxrn" path="res://Player/body_animations.gd" id="1_yj6d6"]
 [ext_resource type="Texture2D" uid="uid://m5plalcvdlk2" path="res://ModularBitey Pieces/Body.png" id="2_d511c"]
+[ext_resource type="Texture2D" uid="uid://dfov27qe7f0m3" path="res://ModularBitey Pieces/Jaw.png" id="3_euxme"]
+[ext_resource type="Texture2D" uid="uid://b3q3ga5qiyh84" path="res://ModularBitey Pieces/Skull.png" id="4_mdpxf"]
+[ext_resource type="Texture2D" uid="uid://bfudq80ie8x18" path="res://ModularBitey Pieces/Eye.png" id="5_ioxog"]
 [ext_resource type="Texture2D" uid="uid://7ua85lrma0rl" path="res://ModularBitey Pieces/Arm.png" id="6_6moo4"]
+[ext_resource type="Texture2D" uid="uid://dux825vb861pa" path="res://ModularBitey Pieces/Tongue2.png" id="6_euxme"]
 [ext_resource type="Texture2D" uid="uid://c431erdcyhxba" path="res://ModularBitey Pieces/Leg.png" id="7_rv1b0"]
 [ext_resource type="Texture2D" uid="uid://767uvvwmnamt" path="res://ModularBitey Pieces/Tail.png" id="8_bdr7h"]
+[ext_resource type="Texture2D" uid="uid://cl5uyeh53khf4" path="res://ModularBitey Pieces/Tongue.png" id="8_d511c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxkkm"]
 atlas = ExtResource("1_8yugs")
@@ -76,6 +81,73 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4lxl1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdpxf"]
+atlas = ExtResource("6_euxme")
+region = Rect2(0, 0, 143, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euxme"]
+atlas = ExtResource("8_d511c")
+region = Rect2(0, 0, 113, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdpxf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdpxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euxme")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilprw"]
+atlas = ExtResource("3_euxme")
+region = Rect2(0, 0, 126, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ioxog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilprw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srp4j"]
+atlas = ExtResource("4_mdpxf")
+region = Rect2(0, 0, 132, 77)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6moo4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srp4j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckpb3"]
+atlas = ExtResource("5_ioxog")
+region = Rect2(0, 0, 41, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rv1b0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckpb3")
 }],
 "loop": true,
 "name": &"default",
@@ -1352,6 +1424,47 @@ position = Vector2(-43, -33)
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-26, 0)
 sprite_frames = SubResource("SpriteFrames_l8nkf")
+
+[node name="Head" type="Node2D" parent="ALL PIECES"]
+position = Vector2(-5, -56)
+rotation = -0.0959931
+
+[node name="Jaw" type="Node2D" parent="ALL PIECES/Head"]
+position = Vector2(7, 36)
+
+[node name="Tongue" type="Marker2D" parent="ALL PIECES/Head/Jaw"]
+position = Vector2(24, -21)
+scale = Vector2(0.64, 0.885)
+
+[node name="tongue_spr" type="AnimatedSprite2D" parent="ALL PIECES/Head/Jaw/Tongue"]
+position = Vector2(26, 15)
+sprite_frames = SubResource("SpriteFrames_mdpxf")
+
+[node name="jawbone" type="Marker2D" parent="ALL PIECES/Head/Jaw"]
+position = Vector2(28, -13)
+
+[node name="Jaw_Spr" type="AnimatedSprite2D" parent="ALL PIECES/Head/Jaw/jawbone"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(19, 8)
+sprite_frames = SubResource("SpriteFrames_ioxog")
+
+[node name="Skull" type="Node2D" parent="ALL PIECES/Head"]
+position = Vector2(6, 36)
+
+[node name="Skullbone" type="Marker2D" parent="ALL PIECES/Head/Skull"]
+position = Vector2(-6, -34)
+
+[node name="Skull_Spr" type="AnimatedSprite2D" parent="ALL PIECES/Head/Skull/Skullbone"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(55, 0)
+sprite_frames = SubResource("SpriteFrames_6moo4")
+
+[node name="Eye" type="Marker2D" parent="ALL PIECES/Head/Skull"]
+position = Vector2(56, -34)
+
+[node name="Eye_Spr" type="AnimatedSprite2D" parent="ALL PIECES/Head/Skull/Eye"]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_rv1b0")
 
 [node name="BodyAnimations" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
