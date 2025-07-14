@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dao5ogkc7gvb2"]
+[gd_scene load_steps=35 format=3 uid="uid://dao5ogkc7gvb2"]
 
 [ext_resource type="Texture2D" uid="uid://b5jh55d2jb4xx" path="res://ModularBitey Pieces/Modular Bitey ref.png" id="1_8yugs"]
 [ext_resource type="Script" uid="uid://q35cutpenxrn" path="res://Player/body_animations.gd" id="1_yj6d6"]
@@ -21,21 +21,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uxkkm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tcf4v"]
-atlas = ExtResource("2_d511c")
-region = Rect2(0, 0, 139, 165)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ko27v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tcf4v")
 }],
 "loop": true,
 "name": &"default",
@@ -1361,7 +1346,6 @@ _data = {
 script = ExtResource("1_yj6d6")
 
 [node name="REF" type="AnimatedSprite2D" parent="."]
-visible = false
 z_index = -20
 sprite_frames = SubResource("SpriteFrames_wlv5e")
 
@@ -1373,12 +1357,15 @@ position = Vector2(-1, 89)
 [node name="Torso" type="Marker2D" parent="ALL PIECES/Body"]
 position = Vector2(-10, -16)
 
-[node name="Torso_Spr" type="AnimatedSprite2D" parent="ALL PIECES/Body/Torso"]
+[node name="Torso_Spr" type="Polygon2D" parent="ALL PIECES/Body/Torso"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(12, -54)
-sprite_frames = SubResource("SpriteFrames_ko27v")
+position = Vector2(-57, -137)
+texture = ExtResource("2_d511c")
+polygon = PackedVector2Array(64, 0, 40, 0, -8, 96, 0, 152, 24, 168, 88, 168, 128, 144, 144, 104, 144, 80, 112, 32, 80, 0)
+uv = PackedVector2Array(64, 0, 40, 0, -8, 96, 0, 152, 24, 168, 88, 168, 128, 144, 144, 104, 144, 80, 112, 32, 80, 0)
 
 [node name="Limbs" type="Node2D" parent="ALL PIECES/Body"]
+visible = false
 position = Vector2(29, -7)
 
 [node name="ArmF" type="Marker2D" parent="ALL PIECES/Body/Limbs"]
@@ -1417,6 +1404,7 @@ position = Vector2(12, 22)
 sprite_frames = SubResource("SpriteFrames_llxbf")
 
 [node name="Tail" type="Marker2D" parent="ALL PIECES/Body"]
+visible = false
 z_index = -1
 position = Vector2(-43, -33)
 
@@ -1426,6 +1414,7 @@ position = Vector2(-26, 0)
 sprite_frames = SubResource("SpriteFrames_l8nkf")
 
 [node name="Head" type="Node2D" parent="ALL PIECES"]
+visible = false
 position = Vector2(-5, -56)
 rotation = -0.0959931
 
@@ -1467,18 +1456,22 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_rv1b0")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="ALL PIECES"]
+visible = false
 
 [node name="Torso" type="Bone2D" parent="ALL PIECES/Skeleton2D"]
 position = Vector2(0, 82)
 rotation = -1.58941
+rest = Transform2D(-0.0186128, -0.999827, 0.999827, -0.0186128, 0, 82)
 
 [node name="Head_Rotate" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
 position = Vector2(137.088, -3.44901)
 rotation = 1.65707
+rest = Transform2D(-0.0861696, 0.99628, -0.99628, -0.0861696, 137.088, -3.44901)
 
 [node name="Skull" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso/Head_Rotate"]
 position = Vector2(31.9268, -2.16354)
 rotation = -0.0280033
+rest = Transform2D(0.999608, -0.0279996, 0.0279996, 0.999608, 31.9268, -2.16354)
 auto_calculate_length_and_angle = false
 length = 34.432
 bone_angle = 0.0
@@ -1486,6 +1479,7 @@ bone_angle = 0.0
 [node name="jaw" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso/Head_Rotate"]
 position = Vector2(28.6797, 9.08173)
 rotation = 0.665396
+rest = Transform2D(0.786672, 0.617371, -0.617371, 0.786672, 28.6797, 9.08173)
 auto_calculate_length_and_angle = false
 length = 34.432
 bone_angle = 0.0
@@ -1493,6 +1487,7 @@ bone_angle = 0.0
 [node name="Arm_F" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
 position = Vector2(70.1554, -7.69555)
 rotation = 2.49312
+rest = Transform2D(-0.797005, 0.603972, -0.603972, -0.797005, 70.1554, -7.69555)
 auto_calculate_length_and_angle = false
 length = 52.865
 bone_angle = 0.0
@@ -1500,6 +1495,7 @@ bone_angle = 0.0
 [node name="Arm_B" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
 position = Vector2(66.9645, 56.2561)
 rotation = 2.51482
+rest = Transform2D(-0.809927, 0.586531, -0.586531, -0.809927, 66.9645, 56.2561)
 auto_calculate_length_and_angle = false
 length = 43.649
 bone_angle = 0.0
@@ -1507,6 +1503,7 @@ bone_angle = 0.0
 [node name="Leg_F" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
 position = Vector2(28.5163, -27.474)
 rotation = 3.12807
+rest = Transform2D(-0.999909, 0.0135271, -0.0135271, -0.999909, 28.5163, -27.474)
 auto_calculate_length_and_angle = false
 length = 52.865
 bone_angle = 0.0
@@ -1514,13 +1511,15 @@ bone_angle = 0.0
 [node name="Leg_B" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
 position = Vector2(26.2694, 39.4958)
 rotation = 3.12807
+rest = Transform2D(-0.999909, 0.0135271, -0.0135271, -0.999909, 26.2694, 39.4958)
 auto_calculate_length_and_angle = false
 length = 52.865
 bone_angle = 0.0
 
 [node name="Tail" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
 position = Vector2(28.8886, -47.4705)
-rotation = -1.51661
+rotation = -1.51614
+rest = Transform2D(0.0546335, -0.998506, 0.998506, 0.0546335, 28.8886, -47.4705)
 auto_calculate_length_and_angle = false
 length = 52.865
 bone_angle = 0.0
