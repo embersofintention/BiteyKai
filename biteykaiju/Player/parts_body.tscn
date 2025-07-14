@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dao5ogkc7gvb2"]
+[gd_scene load_steps=23 format=3 uid="uid://dao5ogkc7gvb2"]
 
 [ext_resource type="Texture2D" uid="uid://b5jh55d2jb4xx" path="res://ModularBitey Pieces/Modular Bitey ref.png" id="1_8yugs"]
 [ext_resource type="Script" uid="uid://q35cutpenxrn" path="res://Player/body_animations.gd" id="1_yj6d6"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dux825vb861pa" path="res://ModularBitey Pieces/Tongue2.png" id="6_euxme"]
 [ext_resource type="Texture2D" uid="uid://c431erdcyhxba" path="res://ModularBitey Pieces/Leg.png" id="7_rv1b0"]
 [ext_resource type="Texture2D" uid="uid://767uvvwmnamt" path="res://ModularBitey Pieces/Tail.png" id="8_bdr7h"]
-[ext_resource type="Texture2D" uid="uid://cl5uyeh53khf4" path="res://ModularBitey Pieces/Tongue.png" id="8_d511c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxkkm"]
 atlas = ExtResource("1_8yugs")
@@ -21,43 +20,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uxkkm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mdpxf"]
-atlas = ExtResource("6_euxme")
-region = Rect2(0, 0, 143, 76)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_euxme"]
-atlas = ExtResource("8_d511c")
-region = Rect2(0, 0, 113, 60)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mdpxf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mdpxf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_euxme")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ilprw"]
-atlas = ExtResource("3_euxme")
-region = Rect2(0, 0, 126, 83)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ioxog"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ilprw")
 }],
 "loop": true,
 "name": &"default",
@@ -602,8 +564,10 @@ position = Vector2(29, -7)
 [node name="ArmF" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 position = Vector2(-36, -66)
 texture = ExtResource("6_6moo4")
-polygon = PackedVector2Array(16, 0, 40, 0, 48, 8, 72, 32, 72, 48, 56, 64, 40, 64, 24, 56, 8, 48, 0, 32, 0, 8)
-uv = PackedVector2Array(16, 0, 40, 0, 48, 8, 72, 32, 72, 48, 56, 64, 40, 64, 24, 56, 8, 56, 0, 32, 0, 8)
+polygon = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 28.6916, 54.9304, 57.5334, 63.65, 69.6067, 39.168, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 16.9536, 14.686, 27.3501, 30.4484, 44.454, 37.8265)
+uv = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 66.5884, 52.9182, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 16.9536, 14.686, 28.6916, 33.8021, 44.454, 37.8265)
+polygons = [PackedInt32Array(0, 9, 8), PackedInt32Array(9, 0, 1), PackedInt32Array(7, 10, 9, 8), PackedInt32Array(10, 9, 1, 2), PackedInt32Array(10, 11, 6, 7), PackedInt32Array(10, 2, 3, 11), PackedInt32Array(11, 3, 4), PackedInt32Array(11, 5, 6), PackedInt32Array(11, 4, 5)]
+internal_vertex_count = 3
 
 [node name="ArmB" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 z_index = -1
@@ -634,30 +598,32 @@ polygon = PackedVector2Array(32, 0, 88, 0, 96, 16, 96, 48, 88, 64, 72, 72, 40, 7
 uv = PackedVector2Array(32, 0, 88, 0, 96, 16, 96, 48, 88, 64, 72, 72, 40, 72, 0, 48, -7.99997, 24, -7.99997, 16, 8, 8)
 
 [node name="Head" type="Node2D" parent="ALL PIECES"]
-visible = false
 position = Vector2(-5, -56)
 rotation = -0.0959931
 
 [node name="Jaw" type="Node2D" parent="ALL PIECES/Head"]
 position = Vector2(7, 36)
 
-[node name="Tongue" type="Marker2D" parent="ALL PIECES/Head/Jaw"]
+[node name="Tongue" type="Polygon2D" parent="ALL PIECES/Head/Jaw"]
+visible = false
 position = Vector2(24, -21)
 scale = Vector2(0.64, 0.885)
+texture = ExtResource("6_euxme")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(8.00002, -16, 72, -8, 96, 8, 112, 32, 112, 48, 104, 56, 96, 64, 80, 64, 72, 56, 56, 40, 16, 40, -8.00001, 32, -16, 16, -16, -8)
+uv = PackedVector2Array(40, 0, 104, 8, 128, 24, 144, 48, 144, 64, 136, 72, 128, 80, 112, 80, 104, 72, 88, 56, 48, 56, 24, 48, 16, 32, 16, 8)
 
-[node name="tongue_spr" type="AnimatedSprite2D" parent="ALL PIECES/Head/Jaw/Tongue"]
-position = Vector2(26, 15)
-sprite_frames = SubResource("SpriteFrames_mdpxf")
-
-[node name="jawbone" type="Marker2D" parent="ALL PIECES/Head/Jaw"]
+[node name="jawbone" type="Polygon2D" parent="ALL PIECES/Head/Jaw"]
 position = Vector2(28, -13)
-
-[node name="Jaw_Spr" type="AnimatedSprite2D" parent="ALL PIECES/Head/Jaw/jawbone"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(19, 8)
-sprite_frames = SubResource("SpriteFrames_ioxog")
+texture = ExtResource("3_euxme")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(48, 24, 64, 40, 96, 32, 120, 40, 128, 48, 120, 64, 96, 80, 72, 88, 48, 88, 32, 80, 8, 56, 0, 40, 0, 8, 16, 0, 32, 0, 24, 32, 32, 48, 56, 64, 88, 56, 112, 56)
+uv = PackedVector2Array(48, 24, 64, 40, 96, 32, 120, 40, 128, 48, 120, 64, 96, 80, 72, 88, 48, 88, 32, 80, 8, 56, 0, 40, 0, 8, 16, 0, 32, 0, 56, 64, 32, 48, 56, 64, 88, 56, 88, 56)
+polygons = [PackedInt32Array(15, 12, 13), PackedInt32Array(15, 14, 13), PackedInt32Array(15, 0, 14), PackedInt32Array(15, 12, 11), PackedInt32Array(10, 16, 15, 11), PackedInt32Array(16, 15, 0, 1)]
+internal_vertex_count = 5
 
 [node name="Skull" type="Node2D" parent="ALL PIECES/Head"]
+visible = false
 position = Vector2(6, 36)
 
 [node name="Skullbone" type="Marker2D" parent="ALL PIECES/Head/Skull"]
@@ -699,6 +665,7 @@ bone_angle = 0.0
 [node name="jaw" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso/Head_Rotate"]
 position = Vector2(28.6797, 9.08173)
 rotation = 0.665396
+scale = Vector2(1, 1)
 rest = Transform2D(0.786672, 0.617371, -0.617371, 0.786672, 28.6797, 9.08173)
 auto_calculate_length_and_angle = false
 length = 34.432
@@ -707,6 +674,7 @@ bone_angle = 0.0
 [node name="Arm_F" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
 position = Vector2(70.1554, -7.69555)
 rotation = 2.49312
+scale = Vector2(1, 1)
 rest = Transform2D(-0.797005, 0.603972, -0.603972, -0.797005, 70.1554, -7.69555)
 auto_calculate_length_and_angle = false
 length = 52.865
