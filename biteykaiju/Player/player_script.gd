@@ -8,7 +8,7 @@ const SPEED = 600
 
 # variables to call our part collection scenes
 @onready var body = %parts_body
-@onready var head = %parts_head
+# onready var head = %parts_head #UNUSED
 
 # -------------------------------------------
 
