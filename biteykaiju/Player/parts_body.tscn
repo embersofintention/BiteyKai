@@ -564,10 +564,8 @@ position = Vector2(29, -7)
 [node name="ArmF" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 position = Vector2(-36, -66)
 texture = ExtResource("6_6moo4")
-polygon = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 28.6916, 54.9304, 57.5334, 63.65, 69.6067, 39.168, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 16.9536, 14.686, 27.3501, 30.4484, 44.454, 37.8265)
-uv = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 66.5884, 52.9182, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 16.9536, 14.686, 28.6916, 33.8021, 44.454, 37.8265)
-polygons = [PackedInt32Array(0, 9, 8), PackedInt32Array(9, 0, 1), PackedInt32Array(7, 10, 9, 8), PackedInt32Array(10, 9, 1, 2), PackedInt32Array(10, 11, 6, 7), PackedInt32Array(10, 2, 3, 11), PackedInt32Array(11, 3, 4), PackedInt32Array(11, 5, 6), PackedInt32Array(11, 4, 5)]
-internal_vertex_count = 3
+polygon = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059)
+uv = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 66.5884, 52.9182, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059)
 
 [node name="ArmB" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 z_index = -1
