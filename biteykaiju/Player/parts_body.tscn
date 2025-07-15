@@ -603,25 +603,26 @@ rotation = -0.0959931
 position = Vector2(7, 36)
 
 [node name="Tongue" type="Polygon2D" parent="ALL PIECES/Head/Jaw"]
-visible = false
 position = Vector2(24, -21)
 scale = Vector2(0.64, 0.885)
 texture = ExtResource("6_euxme")
 skeleton = NodePath("../../../Skeleton2D")
-polygon = PackedVector2Array(8.00002, -16, 72, -8, 96, 8, 112, 32, 112, 48, 104, 56, 96, 64, 80, 64, 72, 56, 56, 40, 16, 40, -8.00001, 32, -16, 16, -16, -8)
-uv = PackedVector2Array(40, 0, 104, 8, 128, 24, 144, 48, 144, 64, 136, 72, 128, 80, 112, 80, 104, 72, 88, 56, 48, 56, 24, 48, 16, 32, 16, 8)
+polygon = PackedVector2Array(-20.2653, 1.43837, 1.63858, -13.6952, 28.3215, -12.8987, 61.7746, -7.72143, 88.0593, 5.02264, 101.6, 24.1387, 105.582, 41.2636, 103.989, 55.6007, 82.4837, 63.9639, 61.7746, 54.0076, 53.4114, 40.0688, 41.0655, 37.2811, 17.9669, 35.688, -17.4775, 26.13)
+uv = PackedVector2Array(16.7722, 17.3685, 38.676, 2.23487, 65.3589, 3.03138, 98.8121, 8.20865, 125.097, 20.9527, 138.637, 40.0688, 142.62, 57.1937, 141.027, 71.5307, 119.521, 79.894, 98.8121, 69.9377, 90.4488, 55.9989, 78.103, 53.2111, 55.0044, 51.6181, 19.5599, 42.0601)
 
 [node name="jawbone" type="Polygon2D" parent="ALL PIECES/Head/Jaw"]
-position = Vector2(29.1957, -15.4361)
+position = Vector2(-17.2784, -44.0221)
 rotation = 0.0500075
+color = Color(0.000113828, 0.000113828, 0.000113828, 1)
 texture = ExtResource("3_euxme")
 skeleton = NodePath("../../../Skeleton2D")
-polygon = PackedVector2Array(-31.2357, -26.4608, -5.13971, -17.7622, 13.4438, 11.1016, 49.82, 3.98449, 81.8469, 20.591, 52.1924, 53.8041, 3.95435, 57.3626, -30.8403, 43.1285, -49.8192, 3.98449, -22.8906, -3.52908, 51.048, 25.1765, 12.339, 29.0909, -9.40768, 18.6525)
+polygon = PackedVector2Array(15.3021, 0.0700912, 41.3981, 8.76875, 59.9816, 37.6325, 96.3579, 30.5154, 128.385, 47.1219, 98.7302, 80.335, 50.4922, 83.8936, 15.6975, 69.6594, -3.28136, 30.5154, 23.6472, 23.0018, 97.5858, 51.7074, 58.8768, 55.6218, 37.1302, 45.1834)
 uv = PackedVector2Array(15.3021, 0.0700912, 41.3981, 8.76875, 59.9816, 37.6325, 96.3579, 30.5154, 128.385, 47.1219, 98.7302, 80.335, 50.4922, 83.8936, 15.6975, 69.6594, -3.28136, 30.5154, 23.6472, 23.0018, 97.5858, 51.7074, 58.8768, 55.6218, 37.1302, 45.1834)
 polygons = [PackedInt32Array(15, 12, 13), PackedInt32Array(15, 14, 13), PackedInt32Array(15, 0, 14), PackedInt32Array(15, 12, 11), PackedInt32Array(10, 16, 15, 11), PackedInt32Array(16, 15, 0, 1), PackedInt32Array(9, 0, 1), PackedInt32Array(9, 0, 8), PackedInt32Array(10, 3, 4), PackedInt32Array(10, 5, 4), PackedInt32Array(2, 11, 10, 3), PackedInt32Array(11, 6, 5, 10), PackedInt32Array(2, 12, 9, 1), PackedInt32Array(12, 7, 8, 9), PackedInt32Array(12, 11, 6, 7), PackedInt32Array(12, 11, 2)]
 internal_vertex_count = 4
 
 [node name="Skull" type="Node2D" parent="ALL PIECES/Head"]
+visible = false
 position = Vector2(6, 36)
 
 [node name="Skullbone" type="Marker2D" parent="ALL PIECES/Head/Skull"]
