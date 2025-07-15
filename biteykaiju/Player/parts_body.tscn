@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dao5ogkc7gvb2"]
+[gd_scene load_steps=19 format=3 uid="uid://dao5ogkc7gvb2"]
 
 [ext_resource type="Texture2D" uid="uid://b5jh55d2jb4xx" path="res://ModularBitey Pieces/Modular Bitey ref.png" id="1_8yugs"]
 [ext_resource type="Script" uid="uid://q35cutpenxrn" path="res://Player/body_animations.gd" id="1_yj6d6"]
@@ -20,36 +20,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uxkkm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_srp4j"]
-atlas = ExtResource("4_mdpxf")
-region = Rect2(0, 0, 132, 77)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6moo4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_srp4j")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ckpb3"]
-atlas = ExtResource("5_ioxog")
-region = Rect2(0, 0, 41, 39)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rv1b0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ckpb3")
 }],
 "loop": true,
 "name": &"default",
@@ -625,23 +595,27 @@ polygons = [PackedInt32Array(15, 12, 13), PackedInt32Array(15, 14, 13), PackedIn
 internal_vertex_count = 4
 
 [node name="Skull" type="Node2D" parent="ALL PIECES/Head"]
-visible = false
 position = Vector2(6, 36)
 
-[node name="Skullbone" type="Marker2D" parent="ALL PIECES/Head/Skull"]
-position = Vector2(-6, -34)
+[node name="Skullbone" type="Polygon2D" parent="ALL PIECES/Head/Skull"]
+position = Vector2(-12.4516, -31.5981)
+color = Color(0, 0, 0, 1)
+offset = Vector2(-8.1606, -35.29)
+texture = ExtResource("4_mdpxf")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(128, 80, 136, 48, 112, 8, 72, 0, 32, 8, 0, 32, 0, 48, 32, 48, 56, 80, 96, 72)
+uv = PackedVector2Array(128, 80, 136, 48, 112, 8, 72, 0, 32, 8, 0, 32, 0, 48, 32, 48, 56, 80, 96, 72)
+polygons = [PackedInt32Array(7, 4, 5, 6), PackedInt32Array(7, 8, 3, 4), PackedInt32Array(8, 9, 2, 3), PackedInt32Array(9, 0, 1, 2)]
 
-[node name="Skull_Spr" type="AnimatedSprite2D" parent="ALL PIECES/Head/Skull/Skullbone"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(55, 0)
-sprite_frames = SubResource("SpriteFrames_6moo4")
-
-[node name="Eye" type="Marker2D" parent="ALL PIECES/Head/Skull"]
-position = Vector2(56, -34)
-
-[node name="Eye_Spr" type="AnimatedSprite2D" parent="ALL PIECES/Head/Skull/Eye"]
-position = Vector2(1, 0)
-sprite_frames = SubResource("SpriteFrames_rv1b0")
+[node name="Eye" type="Polygon2D" parent="ALL PIECES/Head/Skull"]
+position = Vector2(56.71, -29.9617)
+offset = Vector2(-22.5728, -19.6549)
+texture = ExtResource("5_ioxog")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(0, 24, 0, 8, 8, 0, 32, 0, 40, 8, 40, 24, 32, 40, 8, 40, 19.9184, 19.0077)
+uv = PackedVector2Array(0, 24, 0, 8, 8, 0, 32, 0, 40, 8, 40, 24, 32, 40, 8, 40, 16, 16)
+polygons = [PackedInt32Array(8, 2, 3), PackedInt32Array(8, 4, 3), PackedInt32Array(8, 5, 4), PackedInt32Array(8, 5, 6), PackedInt32Array(8, 6, 7), PackedInt32Array(8, 7, 0), PackedInt32Array(8, 0, 1), PackedInt32Array(8, 1, 2)]
+internal_vertex_count = 1
 
 [node name="Skeleton2D" type="Skeleton2D" parent="ALL PIECES"]
 visible = false
