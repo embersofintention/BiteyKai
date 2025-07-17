@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dao5ogkc7gvb2"]
+[gd_scene load_steps=18 format=3 uid="uid://dao5ogkc7gvb2"]
 
 [ext_resource type="Texture2D" uid="uid://b5jh55d2jb4xx" path="res://ModularBitey Pieces/Modular Bitey ref.png" id="1_8yugs"]
 [ext_resource type="Script" uid="uid://q35cutpenxrn" path="res://Player/body_animations.gd" id="1_yj6d6"]
@@ -25,6 +25,8 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6moo4"]
 
 [sub_resource type="Animation" id="Animation_euxme"]
 step = 0.1
@@ -180,7 +182,7 @@ skeleton = NodePath("../../../../Skeleton2D")
 polygon = PackedVector2Array(18.4711, -0.0701609, 37.0973, 8.78491, 41.0668, 20.6934, 32.5171, 34.4341, 16.0284, 38.0982, -1.37642, 22.8309, 2.28775, 7.56352, 19.3829, 10.741, 18.924, 25.6528)
 uv = PackedVector2Array(18.4711, -0.0701609, 37.0973, 8.78491, 41.0668, 20.6934, 32.5171, 34.4341, 16.0284, 38.0982, -1.37642, 22.8309, 2.28775, 7.56352, 19.3829, 10.741, 18.924, 25.6528)
 polygons = [PackedInt32Array(7, 6, 0), PackedInt32Array(7, 1, 0), PackedInt32Array(7, 8, 2, 1), PackedInt32Array(7, 6, 5, 8), PackedInt32Array(5, 8, 4), PackedInt32Array(8, 4, 3), PackedInt32Array(8, 3, 2)]
-bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/TongueBase", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/TongueBase/TongueTip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Eye_Top", PackedFloat32Array(1, 1, 1, 0, 0, 0.53, 1, 1, 1), "Torso/Head_Rotate/Eye_Bottom", PackedFloat32Array(0, 0.53, 1, 1, 1, 1, 0.53, 0.53, 1), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/TongueBase", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/TongueBase/TongueTip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull/Eye_Top", PackedFloat32Array(1, 1, 0.44, 0, 0, 0, 1, 1, 0.44), "Torso/Head_Rotate/Skull/Eye_Bottom", PackedFloat32Array(0, 0, 1, 1, 1, 1, 0, 0, 1), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 2
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
@@ -220,11 +222,27 @@ auto_calculate_length_and_angle = false
 length = 80.513
 bone_angle = 0.0
 
+[node name="Eye_Top" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate/Skull"]
+position = Vector2(32.7442, -32.3236)
+scale = Vector2(1, 1)
+rest = Transform2D(1, 3.72529e-09, -3.72529e-09, 1, 32.7442, -32.3236)
+auto_calculate_length_and_angle = false
+length = 25.216
+bone_angle = 0.0
+
+[node name="Eye_Bottom" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate/Skull"]
+position = Vector2(28.1366, 2.88676)
+scale = Vector2(1, 1)
+rest = Transform2D(1, 3.72529e-09, -3.72529e-09, 1, 28.1366, 2.88676)
+auto_calculate_length_and_angle = false
+length = 25.216
+bone_angle = 0.0
+
 [node name="jaw" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
 position = Vector2(26.9546, 13.2079)
 rotation = 0.176792
-scale = Vector2(1, 1)
-rest = Transform2D(0.984413, 0.175872, -0.175872, 0.984413, 26.9546, 13.2079)
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(0.984412, 0.175872, -0.175872, 0.984412, 26.9546, 13.2079)
 auto_calculate_length_and_angle = false
 length = 80.513
 bone_angle = 0.0
@@ -232,28 +250,10 @@ bone_angle = 0.0
 [node name="jaw2" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
 position = Vector2(26.9546, 13.2079)
 rotation = 0.176792
-scale = Vector2(1, 1)
-rest = Transform2D(0.984413, 0.175872, -0.175872, 0.984413, 26.9546, 13.2079)
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(0.984412, 0.175872, -0.175872, 0.984412, 26.9546, 13.2079)
 auto_calculate_length_and_angle = false
 length = 80.513
-bone_angle = 0.0
-
-[node name="Eye_Top" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
-position = Vector2(57.4452, -24.9408)
-rotation = -0.0280033
-scale = Vector2(1, 1)
-rest = Transform2D(0.999608, -0.0279996, 0.0279996, 0.999608, 57.4452, -24.9408)
-auto_calculate_length_and_angle = false
-length = 25.216
-bone_angle = 0.0
-
-[node name="Eye_Bottom" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
-position = Vector2(53.8252, 10.3848)
-rotation = -0.0280033
-scale = Vector2(1, 1)
-rest = Transform2D(0.999608, -0.0279996, 0.0279996, 0.999608, 53.8252, 10.3848)
-auto_calculate_length_and_angle = false
-length = 25.216
 bone_angle = 0.0
 
 [node name="Tail" type="Bone2D" parent="Skeleton2D/Torso"]
@@ -306,6 +306,7 @@ bone_angle = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
+&"": SubResource("AnimationLibrary_6moo4"),
 &"BODY": SubResource("AnimationLibrary_mdpxf"),
 &"HEAD": SubResource("AnimationLibrary_ioxog")
 }
