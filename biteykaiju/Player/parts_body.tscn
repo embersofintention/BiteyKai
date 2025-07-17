@@ -534,42 +534,58 @@ internal_vertex_count = 3
 [node name="Limbs" type="Node2D" parent="ALL PIECES/Body"]
 position = Vector2(29, -7)
 
-[node name="ArmF" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
-position = Vector2(-36, -66)
-texture = ExtResource("6_6moo4")
-polygon = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059)
-uv = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 66.5884, 52.9182, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059)
-
 [node name="ArmB" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 z_index = -1
-position = Vector2(7, -78)
+position = Vector2(12, -72)
+offset = Vector2(-14, -10)
 texture = ExtResource("6_6moo4")
-polygon = PackedVector2Array(16, 0, 40, 0, 48, 8, 72, 32, 72, 48, 56, 64, 40, 64, 24, 56, 8, 48, 0, 32, 0, 8)
-uv = PackedVector2Array(16, 0, 40, 0, 48, 8, 72, 32, 72, 48, 56, 64, 40, 64, 24, 56, 8, 56, 0, 32, 0, 8)
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 15.3461, 15.6223, 27.1886, 33.512, 50.6217, 42.5829)
+uv = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 15.3461, 15.6223, 27.1886, 33.512, 50.6217, 42.5829)
+polygons = [PackedInt32Array(9, 0, 8), PackedInt32Array(9, 1, 0), PackedInt32Array(9, 10, 2, 1), PackedInt32Array(10, 7, 8, 9), PackedInt32Array(10, 11, 6, 7), PackedInt32Array(10, 2, 3, 11), PackedInt32Array(11, 4, 3), PackedInt32Array(11, 4, 5), PackedInt32Array(11, 5, 6)]
+internal_vertex_count = 3
+
+[node name="ArmF" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
+position = Vector2(-36, -66)
+offset = Vector2(-13, -11)
+texture = ExtResource("6_6moo4")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 15.3461, 15.6223, 27.1886, 33.512, 50.6217, 42.5829)
+uv = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 15.3461, 15.6223, 27.1886, 33.512, 50.6217, 42.5829)
+polygons = [PackedInt32Array(9, 0, 8), PackedInt32Array(9, 1, 0), PackedInt32Array(9, 10, 2, 1), PackedInt32Array(10, 7, 8, 9), PackedInt32Array(10, 11, 6, 7), PackedInt32Array(10, 2, 3, 11), PackedInt32Array(11, 4, 3), PackedInt32Array(11, 4, 5), PackedInt32Array(11, 5, 6)]
+internal_vertex_count = 3
 
 [node name="LegF" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 position = Vector2(-81, -42)
 texture = ExtResource("7_rv1b0")
-polygon = PackedVector2Array(16, 0, 48, 0, 72, 24, 72, 40, 64, 48, 80, 64, 80, 72, 64, 80, 16, 80, 0, 64, 0, 48, 8, 40, 0, 32, 0, 16)
-uv = PackedVector2Array(16, 0, 48, 0, 72, 24, 72, 40, 64, 48, 80, 64, 80, 72, 64, 80, 16, 80, 0, 64, 0, 48, 8, 40, 0, 32, 0, 16)
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(9.2916, 43.4041, 9.2916, 49.3096, 7.51994, 70.5694, 72.4806, 72.3411, 72.7758, 56.6915, 57.1262, 51.6718, 59.1932, 46.6521, 71.2995, 36.908, 71.0042, 31.0025, 42.6575, 3.54092, 21.3976, 3.24565, 7.2244, 20.3716, 7.51967, 34.8401, 34.3886, 48.1281, 33.7981, 29.2304)
+uv = PackedVector2Array(9.2916, 43.4041, 9.2916, 49.3096, 7.51994, 70.5694, 72.4806, 72.3411, 72.7758, 56.6915, 57.1262, 51.6718, 59.1932, 46.6521, 71.2995, 36.908, 71.0042, 31.0025, 42.6575, 3.54092, 21.3976, 3.24565, 7.2244, 20.3716, 7.51967, 34.8401, 34.3886, 48.1281, 33.7981, 29.2304)
+polygons = [PackedInt32Array(13, 6, 5), PackedInt32Array(14, 8, 7), PackedInt32Array(14, 8, 9), PackedInt32Array(14, 9, 10), PackedInt32Array(14, 10, 11), PackedInt32Array(14, 11, 12), PackedInt32Array(14, 12, 0, 13), PackedInt32Array(14, 13, 6, 7), PackedInt32Array(5, 4, 3, 2), PackedInt32Array(13, 5, 2, 1), PackedInt32Array(13, 0, 1)]
+internal_vertex_count = 2
 
 [node name="LegB" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 z_index = -1
-position = Vector2(-17, -42)
+position = Vector2(-15, -43)
 texture = ExtResource("7_rv1b0")
-polygon = PackedVector2Array(16, 0, 48, 0, 72, 24, 72, 40, 64, 48, 80, 64, 80, 72, 64, 80, 16, 80, 0, 64, 0, 48, 8, 40, 0, 32, 0, 16)
-uv = PackedVector2Array(16, 0, 48, 0, 72, 24, 72, 40, 64, 48, 80, 64, 80, 72, 64, 80, 16, 80, 0, 64, 0, 48, 8, 40, 0, 32, 0, 16)
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(9.2916, 43.4041, 9.2916, 49.3096, 7.51994, 70.5694, 72.4806, 72.3411, 72.7758, 56.6915, 57.1262, 51.6718, 59.1932, 46.6521, 71.2995, 36.908, 71.0042, 31.0025, 42.6575, 3.54092, 21.3976, 3.24565, 7.2244, 20.3716, 7.51967, 34.8401, 34.3886, 48.1281, 33.7981, 29.2304)
+uv = PackedVector2Array(9.2916, 43.4041, 9.2916, 49.3096, 7.51994, 70.5694, 72.4806, 72.3411, 72.7758, 56.6915, 57.1262, 51.6718, 59.1932, 46.6521, 71.2995, 36.908, 71.0042, 31.0025, 42.6575, 3.54092, 21.3976, 3.24565, 7.2244, 20.3716, 7.51967, 34.8401, 34.3886, 48.1281, 33.7981, 29.2304)
+polygons = [PackedInt32Array(13, 6, 5), PackedInt32Array(14, 8, 7), PackedInt32Array(14, 8, 9), PackedInt32Array(14, 9, 10), PackedInt32Array(14, 10, 11), PackedInt32Array(14, 11, 12), PackedInt32Array(14, 12, 0, 13), PackedInt32Array(14, 13, 6, 7), PackedInt32Array(5, 4, 3, 2), PackedInt32Array(13, 5, 2, 1), PackedInt32Array(13, 0, 1)]
+internal_vertex_count = 2
 
 [node name="Tail" type="Polygon2D" parent="ALL PIECES/Body"]
 z_index = -1
-position = Vector2(-120, -65)
+position = Vector2(-36, -32)
 color = Color(0.00566115, 0.00566115, 0.00566115, 1)
+offset = Vector2(-84, -33)
 texture = ExtResource("8_bdr7h")
-polygon = PackedVector2Array(32, 0, 88, 0, 96, 16, 96, 48, 88, 64, 72, 72, 40, 72, 0, 48, -7.99997, 24, -7.99997, 16, 8, 8)
-uv = PackedVector2Array(32, 0, 88, 0, 96, 16, 96, 48, 88, 64, 72, 72, 40, 72, 0, 48, -7.99997, 24, -7.99997, 16, 8, 8)
+polygon = PackedVector2Array(-0.578644, 21.0879, 27.2895, 13.6564, 50.8225, 0.960891, 74.6653, 1.27054, 89.8379, 13.966, 92.9344, 37.4991, 79.0003, 61.9611, 55.1576, 65.3672, 31.0052, 56.6971, 10.5686, 41.2148, 67.853, 30.9965, 35.3403, 29.4483, 18.0001, 26.9711)
+uv = PackedVector2Array(-0.578644, 21.0879, 27.2895, 13.6564, 50.8225, 0.960891, 74.6653, 1.27054, 89.8379, 13.966, 92.9344, 37.4991, 79.0003, 61.9611, 55.1576, 65.3672, 31.0052, 56.6971, 10.5686, 41.2148, 67.853, 30.9965, 35.3403, 29.4483, 18.0001, 26.9711)
+polygons = [PackedInt32Array(10, 3, 4, 5), PackedInt32Array(10, 5, 6, 7), PackedInt32Array(10, 11, 8, 7), PackedInt32Array(10, 11, 2, 3), PackedInt32Array(11, 12, 1, 2), PackedInt32Array(11, 12, 9, 8), PackedInt32Array(12, 0, 1), PackedInt32Array(12, 9, 0)]
+internal_vertex_count = 3
 
 [node name="Head" type="Node2D" parent="ALL PIECES"]
-visible = false
 position = Vector2(-5, -56)
 rotation = -0.0959931
 
