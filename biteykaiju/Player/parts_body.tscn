@@ -177,11 +177,11 @@ position = Vector2(56.71, -29.9617)
 offset = Vector2(-22.5728, -19.6549)
 texture = ExtResource("5_ioxog")
 skeleton = NodePath("../../../../Skeleton2D")
-polygon = PackedVector2Array(0, 24, 0, 8, 8, 0, 32, 0, 40, 8, 40, 24, 32, 40, 8, 40, 19.9184, 19.0077)
-uv = PackedVector2Array(0, 24, 0, 8, 8, 0, 32, 0, 40, 8, 40, 24, 32, 40, 8, 40, 16, 16)
-polygons = [PackedInt32Array(8, 2, 3), PackedInt32Array(8, 4, 3), PackedInt32Array(8, 5, 4), PackedInt32Array(8, 5, 6), PackedInt32Array(8, 6, 7), PackedInt32Array(8, 7, 0), PackedInt32Array(8, 0, 1), PackedInt32Array(8, 1, 2)]
-bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Tongue", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
-internal_vertex_count = 1
+polygon = PackedVector2Array(18.4711, -0.0701609, 37.0973, 8.78491, 41.0668, 20.6934, 32.5171, 34.4341, 16.0284, 38.0982, -1.37642, 22.8309, 2.28775, 7.56352, 19.3829, 10.741, 18.924, 25.6528)
+uv = PackedVector2Array(18.4711, -0.0701609, 37.0973, 8.78491, 41.0668, 20.6934, 32.5171, 34.4341, 16.0284, 38.0982, -1.37642, 22.8309, 2.28775, 7.56352, 19.3829, 10.741, 18.924, 25.6528)
+polygons = [PackedInt32Array(7, 6, 0), PackedInt32Array(7, 1, 0), PackedInt32Array(7, 8, 2, 1), PackedInt32Array(7, 6, 5, 8), PackedInt32Array(5, 8, 4), PackedInt32Array(8, 4, 3), PackedInt32Array(8, 3, 2)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/TongueBase", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/TongueBase/TongueTip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Eye_Top", PackedFloat32Array(1, 1, 1, 0, 0, 0.53, 1, 1, 1), "Torso/Head_Rotate/Eye_Bottom", PackedFloat32Array(0, 0.53, 1, 1, 1, 1, 0.53, 0.53, 1), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/belly/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 2
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 
@@ -227,6 +227,33 @@ scale = Vector2(1, 1)
 rest = Transform2D(0.984413, 0.175872, -0.175872, 0.984413, 26.9546, 13.2079)
 auto_calculate_length_and_angle = false
 length = 80.513
+bone_angle = 0.0
+
+[node name="jaw2" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
+position = Vector2(26.9546, 13.2079)
+rotation = 0.176792
+scale = Vector2(1, 1)
+rest = Transform2D(0.984413, 0.175872, -0.175872, 0.984413, 26.9546, 13.2079)
+auto_calculate_length_and_angle = false
+length = 80.513
+bone_angle = 0.0
+
+[node name="Eye_Top" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
+position = Vector2(57.4452, -24.9408)
+rotation = -0.0280033
+scale = Vector2(1, 1)
+rest = Transform2D(0.999608, -0.0279996, 0.0279996, 0.999608, 57.4452, -24.9408)
+auto_calculate_length_and_angle = false
+length = 25.216
+bone_angle = 0.0
+
+[node name="Eye_Bottom" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
+position = Vector2(53.8252, 10.3848)
+rotation = -0.0280033
+scale = Vector2(1, 1)
+rest = Transform2D(0.999608, -0.0279996, 0.0279996, 0.999608, 53.8252, 10.3848)
+auto_calculate_length_and_angle = false
+length = 25.216
 bone_angle = 0.0
 
 [node name="Tail" type="Bone2D" parent="Skeleton2D/Torso"]
