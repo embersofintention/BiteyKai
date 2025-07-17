@@ -513,6 +513,7 @@ _data = {
 script = ExtResource("1_yj6d6")
 
 [node name="REF" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = -20
 sprite_frames = SubResource("SpriteFrames_wlv5e")
 
@@ -526,52 +527,58 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(13, 2)
 offset = Vector2(-80, -155)
 texture = ExtResource("2_d511c")
+skeleton = NodePath("../../../Skeleton2D")
 polygon = PackedVector2Array(58.88, -5.20535, 95.0371, 10.5151, 138.268, 72.611, 140.626, 120.558, 102.897, 160.646, 52.5918, 170.864, 4.64435, 154.357, -3.21588, 106.41, 14.0767, 59.2486, 40.0154, 15.2313, 62.0241, 16.0173, 72.2424, 68.6809, 61.2381, 117.414)
 uv = PackedVector2Array(58.88, -5.20535, 95.0371, 10.5151, 138.268, 72.611, 140.626, 120.558, 102.897, 160.646, 52.5918, 170.864, 4.64435, 154.357, -3.21588, 106.41, 14.0767, 59.2486, 40.0154, 15.2313, 62.0241, 16.0173, 72.2424, 68.6809, 61.2381, 117.414)
 polygons = [PackedInt32Array(7, 12, 5, 6), PackedInt32Array(12, 3, 4, 5), PackedInt32Array(12, 3, 2, 11), PackedInt32Array(12, 7, 8, 11), PackedInt32Array(11, 8, 9, 10), PackedInt32Array(11, 2, 1, 10), PackedInt32Array(10, 9, 0, 1)]
+bones = ["Torso", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Tongue", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 3
 
 [node name="Limbs" type="Node2D" parent="ALL PIECES/Body"]
 position = Vector2(29, -7)
 
-[node name="ArmB" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
+[node name="Arm_B" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 z_index = -1
-position = Vector2(12, -72)
+position = Vector2(18, -72)
 offset = Vector2(-14, -10)
 texture = ExtResource("6_6moo4")
-skeleton = NodePath("../../../Skeleton2D")
+skeleton = NodePath("../../../../Skeleton2D")
 polygon = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 15.3461, 15.6223, 27.1886, 33.512, 50.6217, 42.5829)
 uv = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 15.3461, 15.6223, 27.1886, 33.512, 50.6217, 42.5829)
 polygons = [PackedInt32Array(9, 0, 8), PackedInt32Array(9, 1, 0), PackedInt32Array(9, 10, 2, 1), PackedInt32Array(10, 7, 8, 9), PackedInt32Array(10, 11, 6, 7), PackedInt32Array(10, 2, 3, 11), PackedInt32Array(11, 4, 3), PackedInt32Array(11, 4, 5), PackedInt32Array(11, 5, 6)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 3
 
 [node name="ArmF" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 position = Vector2(-36, -66)
 offset = Vector2(-13, -11)
 texture = ExtResource("6_6moo4")
-skeleton = NodePath("../../../Skeleton2D")
+skeleton = NodePath("../../../../Skeleton2D")
 polygon = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 15.3461, 15.6223, 27.1886, 33.512, 50.6217, 42.5829)
 uv = PackedVector2Array(6.22177, 2.61265, 0.185104, 23.741, 8.23399, 45.8754, 54.5151, 62.6439, 67.5944, 50.9057, 67.2591, 32.796, 55.5212, 18.0397, 39.7588, 17.3689, 32.3806, 0.265059, 15.3461, 15.6223, 27.1886, 33.512, 50.6217, 42.5829)
 polygons = [PackedInt32Array(9, 0, 8), PackedInt32Array(9, 1, 0), PackedInt32Array(9, 10, 2, 1), PackedInt32Array(10, 7, 8, 9), PackedInt32Array(10, 11, 6, 7), PackedInt32Array(10, 2, 3, 11), PackedInt32Array(11, 4, 3), PackedInt32Array(11, 4, 5), PackedInt32Array(11, 5, 6)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 3
 
 [node name="LegF" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 position = Vector2(-81, -42)
 texture = ExtResource("7_rv1b0")
-skeleton = NodePath("../../../Skeleton2D")
+skeleton = NodePath("../../../../Skeleton2D")
 polygon = PackedVector2Array(9.2916, 43.4041, 9.2916, 49.3096, 7.51994, 70.5694, 72.4806, 72.3411, 72.7758, 56.6915, 57.1262, 51.6718, 59.1932, 46.6521, 71.2995, 36.908, 71.0042, 31.0025, 42.6575, 3.54092, 21.3976, 3.24565, 7.2244, 20.3716, 7.51967, 34.8401, 34.3886, 48.1281, 33.7981, 29.2304)
 uv = PackedVector2Array(9.2916, 43.4041, 9.2916, 49.3096, 7.51994, 70.5694, 72.4806, 72.3411, 72.7758, 56.6915, 57.1262, 51.6718, 59.1932, 46.6521, 71.2995, 36.908, 71.0042, 31.0025, 42.6575, 3.54092, 21.3976, 3.24565, 7.2244, 20.3716, 7.51967, 34.8401, 34.3886, 48.1281, 33.7981, 29.2304)
 polygons = [PackedInt32Array(13, 6, 5), PackedInt32Array(14, 8, 7), PackedInt32Array(14, 8, 9), PackedInt32Array(14, 9, 10), PackedInt32Array(14, 10, 11), PackedInt32Array(14, 11, 12), PackedInt32Array(14, 12, 0, 13), PackedInt32Array(14, 13, 6, 7), PackedInt32Array(5, 4, 3, 2), PackedInt32Array(13, 5, 2, 1), PackedInt32Array(13, 0, 1)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 2
 
 [node name="LegB" type="Polygon2D" parent="ALL PIECES/Body/Limbs"]
 z_index = -1
 position = Vector2(-15, -43)
 texture = ExtResource("7_rv1b0")
-skeleton = NodePath("../../../Skeleton2D")
+skeleton = NodePath("../../../../Skeleton2D")
 polygon = PackedVector2Array(9.2916, 43.4041, 9.2916, 49.3096, 7.51994, 70.5694, 72.4806, 72.3411, 72.7758, 56.6915, 57.1262, 51.6718, 59.1932, 46.6521, 71.2995, 36.908, 71.0042, 31.0025, 42.6575, 3.54092, 21.3976, 3.24565, 7.2244, 20.3716, 7.51967, 34.8401, 34.3886, 48.1281, 33.7981, 29.2304)
 uv = PackedVector2Array(9.2916, 43.4041, 9.2916, 49.3096, 7.51994, 70.5694, 72.4806, 72.3411, 72.7758, 56.6915, 57.1262, 51.6718, 59.1932, 46.6521, 71.2995, 36.908, 71.0042, 31.0025, 42.6575, 3.54092, 21.3976, 3.24565, 7.2244, 20.3716, 7.51967, 34.8401, 34.3886, 48.1281, 33.7981, 29.2304)
 polygons = [PackedInt32Array(13, 6, 5), PackedInt32Array(14, 8, 7), PackedInt32Array(14, 8, 9), PackedInt32Array(14, 9, 10), PackedInt32Array(14, 10, 11), PackedInt32Array(14, 11, 12), PackedInt32Array(14, 12, 0, 13), PackedInt32Array(14, 13, 6, 7), PackedInt32Array(5, 4, 3, 2), PackedInt32Array(13, 5, 2, 1), PackedInt32Array(13, 0, 1)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 2
 
 [node name="Tail" type="Polygon2D" parent="ALL PIECES/Body"]
@@ -580,9 +587,11 @@ position = Vector2(-36, -32)
 color = Color(0.00566115, 0.00566115, 0.00566115, 1)
 offset = Vector2(-84, -33)
 texture = ExtResource("8_bdr7h")
+skeleton = NodePath("../../../Skeleton2D")
 polygon = PackedVector2Array(-0.578644, 21.0879, 27.2895, 13.6564, 50.8225, 0.960891, 74.6653, 1.27054, 89.8379, 13.966, 92.9344, 37.4991, 79.0003, 61.9611, 55.1576, 65.3672, 31.0052, 56.6971, 10.5686, 41.2148, 67.853, 30.9965, 35.3403, 29.4483, 18.0001, 26.9711)
 uv = PackedVector2Array(-0.578644, 21.0879, 27.2895, 13.6564, 50.8225, 0.960891, 74.6653, 1.27054, 89.8379, 13.966, 92.9344, 37.4991, 79.0003, 61.9611, 55.1576, 65.3672, 31.0052, 56.6971, 10.5686, 41.2148, 67.853, 30.9965, 35.3403, 29.4483, 18.0001, 26.9711)
 polygons = [PackedInt32Array(10, 3, 4, 5), PackedInt32Array(10, 5, 6, 7), PackedInt32Array(10, 11, 8, 7), PackedInt32Array(10, 11, 2, 3), PackedInt32Array(11, 12, 1, 2), PackedInt32Array(11, 12, 9, 8), PackedInt32Array(12, 0, 1), PackedInt32Array(12, 9, 0)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
 internal_vertex_count = 3
 
 [node name="Head" type="Node2D" parent="ALL PIECES"]
@@ -597,21 +606,23 @@ position = Vector2(19.4334, -18.3854)
 scale = Vector2(0.64, 0.885)
 offset = Vector2(-33.8442, -17.2126)
 texture = ExtResource("6_euxme")
-skeleton = NodePath("../../../Skeleton2D")
+skeleton = NodePath("../../../../Skeleton2D")
 polygon = PackedVector2Array(16.7722, 17.3685, 38.676, 2.23487, 65.3589, 3.03138, 98.8121, 8.20865, 125.097, 20.9527, 138.637, 40.0688, 142.62, 57.1937, 141.027, 71.5307, 119.521, 79.894, 98.8121, 69.9377, 90.4488, 55.9989, 78.103, 53.2111, 55.0044, 51.6181, 19.5599, 42.0601, 61.7747, 25.3335, 86.068, 30.1125, 106.379, 38.4758)
 uv = PackedVector2Array(16.7722, 17.3685, 38.676, 2.23487, 65.3589, 3.03138, 98.8121, 8.20865, 125.097, 20.9527, 138.637, 40.0688, 142.62, 57.1937, 141.027, 71.5307, 119.521, 79.894, 98.8121, 69.9377, 90.4488, 55.9989, 78.103, 53.2111, 55.0044, 51.6181, 19.5599, 42.0601, 61.7747, 25.3335, 86.068, 30.1125, 106.379, 38.4758)
 polygons = [PackedInt32Array(16, 4, 5), PackedInt32Array(16, 5, 6), PackedInt32Array(16, 7, 6), PackedInt32Array(16, 8, 7), PackedInt32Array(16, 9, 8), PackedInt32Array(16, 10, 9), PackedInt32Array(16, 15, 3, 4), PackedInt32Array(16, 15, 11, 10), PackedInt32Array(15, 14, 2, 3), PackedInt32Array(15, 14, 12, 11), PackedInt32Array(14, 2, 1), PackedInt32Array(14, 1, 0), PackedInt32Array(14, 0, 13), PackedInt32Array(14, 12, 13)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Tongue", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 3
 
 [node name="jawbone" type="Polygon2D" parent="ALL PIECES/Head/Jaw"]
 position = Vector2(-17.2784, -44.0221)
 rotation = 0.0500075
-color = Color(0.000113828, 0.000113828, 0.000113828, 1)
+color = Color(0, 0, 0, 1)
 texture = ExtResource("3_euxme")
-skeleton = NodePath("../../../Skeleton2D")
+skeleton = NodePath("../../../../Skeleton2D")
 polygon = PackedVector2Array(15.3021, 0.0700912, 41.3981, 8.76875, 59.9816, 37.6325, 96.3579, 30.5154, 128.385, 47.1219, 98.7302, 80.335, 50.4922, 83.8936, 15.6975, 69.6594, -3.28136, 30.5154, 23.6472, 23.0018, 97.5858, 51.7074, 58.8768, 55.6218, 37.1302, 45.1834)
 uv = PackedVector2Array(15.3021, 0.0700912, 41.3981, 8.76875, 59.9816, 37.6325, 96.3579, 30.5154, 128.385, 47.1219, 98.7302, 80.335, 50.4922, 83.8936, 15.6975, 69.6594, -3.28136, 30.5154, 23.6472, 23.0018, 97.5858, 51.7074, 58.8768, 55.6218, 37.1302, 45.1834)
 polygons = [PackedInt32Array(15, 12, 13), PackedInt32Array(15, 14, 13), PackedInt32Array(15, 0, 14), PackedInt32Array(15, 12, 11), PackedInt32Array(10, 16, 15, 11), PackedInt32Array(16, 15, 0, 1), PackedInt32Array(9, 0, 1), PackedInt32Array(9, 0, 8), PackedInt32Array(10, 3, 4), PackedInt32Array(10, 5, 4), PackedInt32Array(2, 11, 10, 3), PackedInt32Array(11, 6, 5, 10), PackedInt32Array(2, 12, 9, 1), PackedInt32Array(12, 7, 8, 9), PackedInt32Array(12, 11, 6, 7), PackedInt32Array(12, 11, 2)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Tongue", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/jaw", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 4
 
 [node name="Skull" type="Node2D" parent="ALL PIECES/Head"]
@@ -622,91 +633,22 @@ position = Vector2(-12.4516, -31.5981)
 color = Color(0, 0, 0, 1)
 offset = Vector2(-8.1606, -35.29)
 texture = ExtResource("4_mdpxf")
-skeleton = NodePath("../../../Skeleton2D")
+skeleton = NodePath("../../../../Skeleton2D")
 polygon = PackedVector2Array(128, 80, 136, 48, 112, 8, 72, 0, 32, 8, 0, 32, 0, 48, 32, 48, 56, 80, 96, 72)
 uv = PackedVector2Array(128, 80, 136, 48, 112, 8, 72, 0, 32, 8, 0, 32, 0, 48, 32, 48, 56, 80, 96, 72)
 polygons = [PackedInt32Array(7, 4, 5, 6), PackedInt32Array(7, 8, 3, 4), PackedInt32Array(8, 9, 2, 3), PackedInt32Array(9, 0, 1, 2)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Tongue", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Eye" type="Polygon2D" parent="ALL PIECES/Head/Skull"]
 position = Vector2(56.71, -29.9617)
 offset = Vector2(-22.5728, -19.6549)
 texture = ExtResource("5_ioxog")
-skeleton = NodePath("../../../Skeleton2D")
+skeleton = NodePath("../../../../Skeleton2D")
 polygon = PackedVector2Array(0, 24, 0, 8, 8, 0, 32, 0, 40, 8, 40, 24, 32, 40, 8, 40, 19.9184, 19.0077)
 uv = PackedVector2Array(0, 24, 0, 8, 8, 0, 32, 0, 40, 8, 40, 24, 32, 40, 8, 40, 16, 16)
 polygons = [PackedInt32Array(8, 2, 3), PackedInt32Array(8, 4, 3), PackedInt32Array(8, 5, 4), PackedInt32Array(8, 5, 6), PackedInt32Array(8, 6, 7), PackedInt32Array(8, 7, 0), PackedInt32Array(8, 0, 1), PackedInt32Array(8, 1, 2)]
+bones = ["Torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Tongue", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Head_Rotate/Skull", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1), "Torso/Head_Rotate/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Arm_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_F", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Leg_B", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Torso/Tail", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 1
-
-[node name="Skeleton2D" type="Skeleton2D" parent="ALL PIECES"]
-visible = false
-
-[node name="Torso" type="Bone2D" parent="ALL PIECES/Skeleton2D"]
-position = Vector2(0, 82)
-rotation = -1.58941
-rest = Transform2D(-0.0186128, -0.999827, 0.999827, -0.0186128, 0, 82)
-
-[node name="Head_Rotate" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
-position = Vector2(137.088, -3.44901)
-rotation = 1.65707
-rest = Transform2D(-0.0861696, 0.99628, -0.99628, -0.0861696, 137.088, -3.44901)
-
-[node name="Skull" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso/Head_Rotate"]
-position = Vector2(31.9268, -2.16354)
-rotation = -0.0280033
-rest = Transform2D(0.999608, -0.0279996, 0.0279996, 0.999608, 31.9268, -2.16354)
-auto_calculate_length_and_angle = false
-length = 34.432
-bone_angle = 0.0
-
-[node name="jaw" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso/Head_Rotate"]
-position = Vector2(28.6797, 9.08173)
-rotation = 0.665396
-scale = Vector2(1, 1)
-rest = Transform2D(0.786672, 0.617371, -0.617371, 0.786672, 28.6797, 9.08173)
-auto_calculate_length_and_angle = false
-length = 34.432
-bone_angle = 0.0
-
-[node name="Arm_F" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
-position = Vector2(70.1554, -7.69555)
-rotation = 2.49312
-scale = Vector2(1, 1)
-rest = Transform2D(-0.797005, 0.603972, -0.603972, -0.797005, 70.1554, -7.69555)
-auto_calculate_length_and_angle = false
-length = 52.865
-bone_angle = 0.0
-
-[node name="Arm_B" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
-position = Vector2(66.9645, 56.2561)
-rotation = 2.51482
-rest = Transform2D(-0.809927, 0.586531, -0.586531, -0.809927, 66.9645, 56.2561)
-auto_calculate_length_and_angle = false
-length = 43.649
-bone_angle = 0.0
-
-[node name="Leg_F" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
-position = Vector2(28.5163, -27.474)
-rotation = 3.12807
-rest = Transform2D(-0.999909, 0.0135271, -0.0135271, -0.999909, 28.5163, -27.474)
-auto_calculate_length_and_angle = false
-length = 52.865
-bone_angle = 0.0
-
-[node name="Leg_B" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
-position = Vector2(26.2694, 39.4958)
-rotation = 3.12807
-rest = Transform2D(-0.999909, 0.0135271, -0.0135271, -0.999909, 26.2694, 39.4958)
-auto_calculate_length_and_angle = false
-length = 52.865
-bone_angle = 0.0
-
-[node name="Tail" type="Bone2D" parent="ALL PIECES/Skeleton2D/Torso"]
-position = Vector2(28.8886, -47.4705)
-rotation = -1.51614
-rest = Transform2D(0.0546335, -0.998506, 0.998506, 0.0546335, 28.8886, -47.4705)
-auto_calculate_length_and_angle = false
-length = 52.865
-bone_angle = 0.0
 
 [node name="BodyAnimations" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -715,8 +657,81 @@ libraries = {
 &"BODY": SubResource("AnimationLibrary_d511c")
 }
 
-[node name="TEST" type="Marker2D" parent="."]
-visible = false
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
 
-[node name="asdfasdf" type="Node2D" parent="."]
-position = Vector2(0, -110)
+[node name="Torso" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(0, 82)
+rotation = -1.58941
+rest = Transform2D(-0.0186125, -0.999827, 0.999827, -0.0186125, 0, 82)
+
+[node name="Head_Rotate" type="Bone2D" parent="Skeleton2D/Torso"]
+position = Vector2(137.088, -3.44901)
+rotation = 1.65707
+rest = Transform2D(-0.0861667, 0.996281, -0.996281, -0.0861667, 137.088, -3.44901)
+
+[node name="Tongue" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
+position = Vector2(34.6659, 8.6762)
+rotation = 0.479001
+scale = Vector2(1, 1)
+rest = Transform2D(0.887456, 0.460892, -0.460892, 0.887456, 34.6659, 8.6762)
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 0.0
+
+[node name="Skull" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
+position = Vector2(25.6189, 8.28697)
+rotation = -0.0280033
+rest = Transform2D(0.999608, -0.0279996, 0.0279996, 0.999608, 25.6189, 8.28697)
+auto_calculate_length_and_angle = false
+length = 80.513
+bone_angle = 0.0
+
+[node name="jaw" type="Bone2D" parent="Skeleton2D/Torso/Head_Rotate"]
+position = Vector2(26.9546, 13.2079)
+rotation = 0.176792
+scale = Vector2(1, 1)
+rest = Transform2D(0.984413, 0.175872, -0.175872, 0.984413, 26.9546, 13.2079)
+auto_calculate_length_and_angle = false
+length = 80.513
+bone_angle = 0.0
+
+[node name="Arm_F" type="Bone2D" parent="Skeleton2D/Torso"]
+position = Vector2(70.1554, -7.69555)
+rotation = 2.49312
+scale = Vector2(1, 1)
+rest = Transform2D(-0.797007, 0.60397, -0.60397, -0.797007, 70.1554, -7.69555)
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 0.0
+
+[node name="Arm_B" type="Bone2D" parent="Skeleton2D/Torso"]
+position = Vector2(66.9645, 56.2561)
+rotation = 2.51482
+rest = Transform2D(-0.809925, 0.586534, -0.586534, -0.809925, 66.9645, 56.2561)
+auto_calculate_length_and_angle = false
+length = 43.649
+bone_angle = 0.0
+
+[node name="Leg_F" type="Bone2D" parent="Skeleton2D/Torso"]
+position = Vector2(28.5163, -27.474)
+rotation = 3.12807
+rest = Transform2D(-0.999909, 0.0135221, -0.0135221, -0.999909, 28.5163, -27.474)
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 0.0
+
+[node name="Leg_B" type="Bone2D" parent="Skeleton2D/Torso"]
+position = Vector2(26.2694, 39.4958)
+rotation = 3.12807
+rest = Transform2D(-0.999909, 0.0135221, -0.0135221, -0.999909, 26.2694, 39.4958)
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 0.0
+
+[node name="Tail" type="Bone2D" parent="Skeleton2D/Torso"]
+position = Vector2(28.8886, -47.4705)
+rotation = -1.51614
+rest = Transform2D(0.0546291, -0.998507, 0.998507, 0.0546291, 28.8886, -47.4705)
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 0.0
