@@ -6,6 +6,7 @@ extends Node2D
 
 # Variables:
 var current_animation := "" # for animation helper function
+var mouse_pos
 @onready var body_animations = %BodyAnimations # assigns AnimationPlayer to a variable
 @onready var this_node = name # returns name of node
 
@@ -34,11 +35,17 @@ func play_run_animation():
 	
 
 # EXPERIMENTAL:  head rotates to look at mouse...???
-# >> Working, but commented out so I can try something else
-#func _physics_process(delta: float) -> void:
+
+func _physics_process(delta: float) -> void:
 		# Head looks at mouse
+		# >> Working, but commented out so I can try something else
 	#%Head_Rotate.look_at(get_global_mouse_position())
-		
+	
+	# head faces direction (experiment)
+	mouse_pos = get_global_mouse_position() # easier way to reference mouse position
+	# defining angle
+	var angle = (mouse_pos - %Head_Rotate.global_position).angle
+
 		
 		
 		

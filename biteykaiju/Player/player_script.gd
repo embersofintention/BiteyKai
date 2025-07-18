@@ -3,14 +3,19 @@ extends CharacterBody2D
 # variables 
 var player_scale = 1
 
+
 # constants
 const SPEED = 600
 
 # variables to call our part collection scenes
 @onready var body = %parts_body
+#@onready var head = %Head_Rotate
 # onready var head = %parts_head #UNUSED
 
 # -------------------------------------------
+
+func _ready() -> void:
+	pass
 
 func _physics_process(delta: float) -> void:
 	
@@ -28,6 +33,8 @@ func _physics_process(delta: float) -> void:
 		# and to avoid scale.y breaking:
 		if velocity.y: 
 			body.scale.y = player_scale
+	
+
 			
 	
 	
@@ -40,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() == 0.0: 
 		body.play_idle_animation()
 	
-	# Head Animations
+
 	
 
 
