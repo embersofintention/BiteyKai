@@ -34,9 +34,10 @@ func play_run_animation():
 	
 
 # EXPERIMENTAL:  head rotates to look at mouse...???
-func _physics_process(delta: float) -> void:
+# >> Working, but commented out so I can try something else
+#func _physics_process(delta: float) -> void:
 		# Head looks at mouse
-	%Head_Rotate.look_at(get_global_mouse_position())
+	#%Head_Rotate.look_at(get_global_mouse_position())
 		
 		
 		
