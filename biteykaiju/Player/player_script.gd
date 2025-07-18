@@ -3,7 +3,7 @@ extends CharacterBody2D
 # variables 
 var player_scale = 1
 var mouse_pos
-var head_bone
+var head_bone # the bone we gotta rotate
 var head_rotate_correction = deg_to_rad(90)
 
 # constants
@@ -53,11 +53,16 @@ func _physics_process(delta: float) -> void:
 		body.play_idle_animation()
 	
 
-	# I am going to break this shit\
-	mouse_pos = get_global_mouse_position() # easier way to reference mouse position
-	var cursor_angle = (mouse_pos - head_bone.global_position).angle()
-	print_debug("cursor angle = ", cursor_angle)
-	head_bone.rotation = cursor_angle + head_rotate_correction
+	# HEAD FOLLOWS MOUSE (wip)
+	
+	# easier way to reference mouse position
+	mouse_pos = get_global_mouse_position() 
+	# determines angle from position to cursor
+	var cursor_angle = head_rotate_correction + (mouse_pos - head_bone.global_position).angle()
+	
+	
+	#Apply rotation logic
+	head_bone.rotation = cursor_angle
 
 
 	
