@@ -4,7 +4,8 @@ extends CharacterBody2D
 var player_scale = 1
 var mouse_pos
 var head_bone # the bone we gotta rotate
-var head_rotate_correction = deg_to_rad(90)
+var head_rotate_correction = deg_to_rad(90) # corrects bone angle offset
+var clamp_amount = deg_to_rad(60) # how much to clamp head rotation
 
 # constants
 const SPEED = 600
@@ -59,10 +60,13 @@ func _physics_process(delta: float) -> void:
 	mouse_pos = get_global_mouse_position() 
 	# determines angle from position to cursor
 	var cursor_angle = head_rotate_correction + (mouse_pos - head_bone.global_position).angle()
-	
+	# create clamped angle so it doesn't flip
+	#var clamped_angle = clamp(cursor_angle, (-clamp_amount), (clamp_amount))
+	var clamped_angle = clamp(cursor_angle, (head_rotate_correction - clamp_amount), (head_rotate_correction + clamp_amount))
 	
 	#Apply rotation logic
-	head_bone.rotation = cursor_angle
+	head_bone.rotation = clamped_angle
+	#print_debug(cursor_angle)
 
 
 	
