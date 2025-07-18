@@ -51,21 +51,24 @@ func _physics_process(delta: float) -> void:
 
 	if dir.x >= 0:
 		# Mouse is right: face right
-		body.scale.x = abs(body.scale.x)
+		#body.scale.x = abs(body.scale.x)
 		head_bone.scale.x = 1
 		var cursor_angle = head_rotate_correction + dir.angle()
 		var clamped_angle = clamp(cursor_angle, head_rotate_correction - clamp_amount, head_rotate_correction + clamp_amount)
 		head_bone.rotation = clamped_angle
+		
 	else:
 		# Mouse is left: face left/flip!
-		body.scale.x = -abs(body.scale.x)
+		#body.scale.x = -abs(body.scale.x)
 		head_bone.scale.x = 1
 		# Mirror the mouse X for symmetrical clamping
 		var flipped_mouse = Vector2(2 * head_pos.x - mouse_pos.x, mouse_pos.y)
 		var cursor_angle = head_rotate_correction + (flipped_mouse - head_pos).angle()
 		var clamped_angle = clamp(cursor_angle, head_rotate_correction - clamp_amount, head_rotate_correction + clamp_amount)
 		head_bone.rotation = clamped_angle
+		
 
 	# ---------------------------------------
 	
 	move_and_slide()
+	
