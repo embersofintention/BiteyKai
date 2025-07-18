@@ -1,75 +1,71 @@
 extends CharacterBody2D
 
-# variables 
-var player_scale = 1
-var mouse_pos
-var head_bone # the bone we gotta rotate
-var head_rotate_correction = deg_to_rad(90) # corrects bone angle offset
-var clamp_amount = deg_to_rad(60) # how much to clamp head rotation
+# Config variables
+var player_scale := 1
+var head_rotate_correction := deg_to_rad(90) # e.g. for upward-forward bones
+var clamp_amount := deg_to_rad(60)
 
-# constants
+# Game object references
+var head_bone # the bone we rotate
+@onready var body = %parts_body
+
+# Working variables (not needed outside _physics_process)
+var mouse_pos
+var head_pos
+
 const SPEED = 600
 
-# variables to call our part collection scenes
-@onready var body = %parts_body
-#@onready var head = %Head_Rotate
-# onready var head = %parts_head #UNUSED
-
-# -------------------------------------------
-
 func _ready() -> void:
-	#set variable to access %Head_Rotate (referencing a variable in the body script)
+	# Access head bone via your body scene's variable
 	head_bone = body.head_rotate
-	# allow us to control %Head_Rotate from our code
-	head_bone.set_process_internal(true) # ensures manual control
+	# Make sure we have manual control of the bone
+	
 
 func _physics_process(delta: float) -> void:
-	
-	# get direction based on player input
+	# Input & movement
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	# set player velocity
 	velocity = direction * SPEED
 	
-	# character faces direction 
+	# Character flipping
 	if direction:
-		# if moving horizontally:
 		if velocity.x != 0 and velocity.y == 0: 
-			# face the appropriate direction
 			body.scale.x = direction.x * player_scale
-		# and to avoid scale.y breaking:
 		if velocity.y: 
 			body.scale.y = player_scale
 	
-
-			
-	
-	
-	# ANIMATIONS
-	
-	# Body Animations
+	# Animate body
 	if velocity.length() > 0.0: 
 		body.play_run_animation()
-		
-	if velocity.length() == 0.0: 
+	else:
 		body.play_idle_animation()
-	
 
-	# HEAD FOLLOWS MOUSE (wip)
-	
-	# easier way to reference mouse position
-	mouse_pos = get_global_mouse_position() 
-	# determines angle from position to cursor
-	var cursor_angle = head_rotate_correction + (mouse_pos - head_bone.global_position).angle()
-	# create clamped angle so it doesn't flip
-	#var clamped_angle = clamp(cursor_angle, (-clamp_amount), (clamp_amount))
-	var clamped_angle = clamp(cursor_angle, (head_rotate_correction - clamp_amount), (head_rotate_correction + clamp_amount))
-	
-	#Apply rotation logic
-	head_bone.rotation = clamped_angle
-	#print_debug(cursor_angle)
+	# ---------------------------------------
+	# HEAD TRACK/FLIP LOGIC (core section)
+	# ---------------------------------------
+	mouse_pos = get_global_mouse_position()
+	head_pos = head_bone.global_position
+	var dir = mouse_pos - head_pos
 
+	# Default head scale.y to 1 to avoid "squishing" when parent is scaled
+	head_bone.scale.y = 1
 
+	if dir.x >= 0:
+		# Mouse is right: face right
+		body.scale.x = abs(body.scale.x)
+		head_bone.scale.x = 1
+		var cursor_angle = head_rotate_correction + dir.angle()
+		var clamped_angle = clamp(cursor_angle, head_rotate_correction - clamp_amount, head_rotate_correction + clamp_amount)
+		head_bone.rotation = clamped_angle
+	else:
+		# Mouse is left: face left/flip!
+		body.scale.x = -abs(body.scale.x)
+		head_bone.scale.x = 1
+		# Mirror the mouse X for symmetrical clamping
+		var flipped_mouse = Vector2(2 * head_pos.x - mouse_pos.x, mouse_pos.y)
+		var cursor_angle = head_rotate_correction + (flipped_mouse - head_pos).angle()
+		var clamped_angle = clamp(cursor_angle, head_rotate_correction - clamp_amount, head_rotate_correction + clamp_amount)
+		head_bone.rotation = clamped_angle
+
+	# ---------------------------------------
 	
-	
-	# apply movement
 	move_and_slide()
