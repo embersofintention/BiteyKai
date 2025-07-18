@@ -2111,6 +2111,7 @@ rotation = -1.58941
 rest = Transform2D(-0.0186125, -0.999827, 0.999827, -0.0186125, 0, 82)
 
 [node name="Head_Rotate" type="Bone2D" parent="Skeleton2D/Torso"]
+unique_name_in_owner = true
 position = Vector2(137.088, -3.44901)
 rotation = 1.65707
 rest = Transform2D(-0.0861667, 0.996281, -0.996281, -0.0861667, 137.088, -3.44901)

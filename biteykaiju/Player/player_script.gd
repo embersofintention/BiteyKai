@@ -40,10 +40,10 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() == 0.0: 
 		body.play_idle_animation()
 	
-	
 	# Head Animations
 	
-	
+
+
 	
 	
 	# apply movement
