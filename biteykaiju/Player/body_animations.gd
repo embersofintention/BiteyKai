@@ -45,6 +45,8 @@ func _physics_process(delta: float) -> void:
 	mouse_pos = get_global_mouse_position() # easier way to reference mouse position
 	# defining angle
 	var angle = (mouse_pos - %Head_Rotate.global_position).angle
+	# head rotates at angle???
+	
 
 		
 		
