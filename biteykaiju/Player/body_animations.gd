@@ -26,11 +26,11 @@ func change_animation(anim_name: String):
 
 # ANIMATION SWITCHING
 func play_idle_animation(): 
-	change_animation("BODY/idle")
+	change_animation("BODY/idle2")
 	
 
 func play_run_animation(): 
-	change_animation("BODY/run")
+	change_animation("BODY/run1")
 	
 
 
