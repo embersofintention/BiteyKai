@@ -11,6 +11,7 @@ radius = 65.0077
 script = ExtResource("1_gwnis")
 
 [node name="ModularBiteyRef" type="Sprite2D" parent="."]
+visible = false
 z_index = -10
 position = Vector2(17, -108)
 texture = ExtResource("1_l8h54")
