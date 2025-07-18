@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 # variables 
 var player_scale = 1
-
+var mouse_pos
+var head_bone
+var head_rotate_correction = deg_to_rad(90)
 
 # constants
 const SPEED = 600
@@ -15,7 +17,10 @@ const SPEED = 600
 # -------------------------------------------
 
 func _ready() -> void:
-	pass
+	#set variable to access %Head_Rotate (referencing a variable in the body script)
+	head_bone = body.head_rotate
+	# allow us to control %Head_Rotate from our code
+	head_bone.set_process_internal(true) # ensures manual control
 
 func _physics_process(delta: float) -> void:
 	
@@ -48,7 +53,11 @@ func _physics_process(delta: float) -> void:
 		body.play_idle_animation()
 	
 
-	
+	# I am going to break this shit\
+	mouse_pos = get_global_mouse_position() # easier way to reference mouse position
+	var cursor_angle = (mouse_pos - head_bone.global_position).angle()
+	print_debug("cursor angle = ", cursor_angle)
+	head_bone.rotation = cursor_angle + head_rotate_correction
 
 
 	
