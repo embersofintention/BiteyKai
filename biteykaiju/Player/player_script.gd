@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 # Config variables
-var player_scale := 1
+var player_scale := .5
 var head_rotate_correction := deg_to_rad(90) # e.g. for upward-forward bones
-var clamp_amount := deg_to_rad(60)
+var clamp_amount := deg_to_rad(80) # to reset, use 60
 
 # Game object references
 var head_bone # the bone we rotate
